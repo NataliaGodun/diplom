@@ -19,13 +19,20 @@
 				<img
 					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
 					width="40%" />
-				
 				<h1>
 				+375 29 336-25-26<br />
 				+375 29 336-25-26
 				</h1>
-	        </div>
-	      </div>
+				
+
+				
+			</div>
+
+		</div>
+	
+		<img
+					src="${pageContext.request. contextPath}/resources/images/image2.png"
+					width="100%" />
 		<br /> <br />
 		<div id="welcome">
 			<h1>

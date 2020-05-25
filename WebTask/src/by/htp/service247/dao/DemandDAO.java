@@ -8,13 +8,17 @@ import by.htp.service247.domain.Demand;
 
 public interface DemandDAO {
 	
-	ArrayList<Demand> showDemand() throws DAOException;
+	ArrayList<Demand> showDemand(int id) throws DAOException;
+	ArrayList<Demand> showDemand(String department) throws DAOException;
 
 	
 	Demand addDemand(Demand demand) throws DAOException;
 
 
 	void deleteDemand(int id) throws DAOException;
+
+
+	Demand editDemand(Demand demand)throws DAOException;
 
 	
 

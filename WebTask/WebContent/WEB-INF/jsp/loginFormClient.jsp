@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/styleNew2.css" />" />
 <title>Registration</title>
 </head>
 <body>
@@ -24,12 +24,20 @@
 				+375 29 336-25-26<br />
 				+375 29 336-25-26
 				</h1>
-	        </div>
+				
+
 				
 			</div>
 
+		</div>
+	
+		<img
+					src="${pageContext.request. contextPath}/resources/images/image2.png"
+					width="100%" />
 		
-		
+		<br />	
+		<div id="inline">
+			<div id="content">
        <div id="loginForm">
 			<form action="Controller" method="post">
 				<input type="hidden" name="command" value="AUTHORIZATIONCLIENT" />			
@@ -41,7 +49,9 @@
 			</form>
 		</div>
 		
-		
+		</div>
+
+		</div>
 
 	</div>
 </body>

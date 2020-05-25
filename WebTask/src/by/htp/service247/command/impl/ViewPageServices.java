@@ -13,7 +13,7 @@ public class ViewPageServices implements Command {
 	private static final String PAGE_SERVICE_JSP = "WEB-INF/jsp/pageServices.jsp";
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(PAGE_SERVICE_JSP);
 
 		dispatcher.forward(request, response);

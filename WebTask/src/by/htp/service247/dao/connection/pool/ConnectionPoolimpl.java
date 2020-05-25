@@ -37,7 +37,7 @@ import org.apache.logging.log4j.Logger;
 public final class ConnectionPoolimpl implements ConnectionPool {
 	private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
 	//private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://127.0.0.1/s?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
+	private static final String URL = "jdbc:mysql://127.0.0.1/nata?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
 	private static final String USER = "root";
 	private static final String PASSWORD = "ER567ghm";
 	private static final String MESSAGE_SQL_EXCEPTION_CONNECTION_POOL = "SQLException in ConnectionPool";

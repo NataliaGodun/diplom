@@ -24,9 +24,14 @@
 				+375 29 336-25-26<br />
 				+375 29 336-25-26
 				</h1>
-	        </div>
-	      </div>
-		<br /> <br />
+				</div>	</div>
+	
+		<img
+					src="${pageContext.request. contextPath}/resources/images/image2.png"
+					width="100%" />
+						<div id="inline">
+			<div id="content">
+		
 		<div id="welcome">
 			<h1>
 				Добро пожаловать
@@ -58,7 +63,7 @@
 			</form>
 		</div>
 
-		
+		</div></div>
 
 </body>
 </html>

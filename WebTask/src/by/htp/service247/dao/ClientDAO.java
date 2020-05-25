@@ -1,7 +1,10 @@
 package by.htp.service247.dao;
 
+import java.util.ArrayList;
+
 import by.htp.service247.dao.exception.DAOException;
 import by.htp.service247.domain.Client;
+import by.htp.service247.domain.Demand;
 
 /**
  * @author Godun Natalia
@@ -16,7 +19,9 @@ public interface ClientDAO {
 	 * @param login
 	 * @param password
 	 */
-	Client authorization(String login, String password) throws DAOException;
+	Client authorization (String login, String password) throws DAOException;
 
-	
+	Client registration (Client client) throws DAOException;
+	ArrayList<Client> showClient() throws DAOException;
+	void deleteClient(int id) throws DAOException;
 }

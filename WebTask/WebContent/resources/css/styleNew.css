@@ -40,10 +40,19 @@ html, body {
 #content{
 	
     background: #ffffff; /* Цвет фона */
-    margin-left: 30px;
+    margin-left: 20px;
     float: left;
 	display:block;
     width:60%;
+    
+}
+#content2{
+	
+    background: #ffffff; /* Цвет фона */
+    margin-left: 700px;
+    float: left;
+	display:block;
+    width:10%;
     
 }
 #loginForm{

@@ -18,14 +18,17 @@
 			<div id="header">
 				<img
 					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />
-				
+					width="40%" />		
 				<h1>
 				+375 29 336-25-26<br />
 				+375 29 336-25-26
 				</h1>
-	        </div>
-	      </div>
+	</div>
+</div>
+	
+		<img
+					src="${pageContext.request. contextPath}/resources/images/image2.png"
+					width="100%" />
 		<br /> <br />
 			<c:if test="${not empty  requestScope.messageWrongDelate }">
 			<br />
@@ -35,6 +38,14 @@
 		
 		
 <c:forEach items="${requestScope.List}" var="List">
+	<div id="image">
+							<c:if test="${not empty  List.photo}">
+								<img
+									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${List.photo}"
+									width="50%" />
+							</c:if>
+						</div>
+
 							<br /> <strong>Отдел</strong>
 							<c:out value=" ${List.department}" />		
 							<br /><strong>Описание</strong>
@@ -45,29 +56,18 @@
 							<c:out value=" ${List.status_demand}" />
 							
 							<br />
+							
+						
+		
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="DELETEDEMAND" /> 
 								<input type="hidden" name="id" value="${List.id}" /> 
 								<input type="hidden" name="status" value="${List.status_demand}" />
-								<input	type="submit" value="Удалить заявку"  />
-							</form>
-							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="viewBook" /> <input
-									type="hidden" name="id" value="${List.id}" /> <input
-									type="submit" value="Удалить /редактир" /> />
+								<input	type="submit" value="Просмотреть заявку"  />
 							</form>
 							
-
-
-
-					
-
 					<br />
 				</c:forEach>
-
-		
-
-			
 			<br />
 			
 			<br />

@@ -63,9 +63,10 @@ public class DeleteDemand implements Command {
 
 		
 		}else {
+			int id=1;
 			System.out.println("1"+status_demand);
 			try {
-			ArrayList<Demand> List = demandService.showDemand();
+			ArrayList<Demand> List = demandService.showDemand( id);
 			
 			request.setAttribute(LIST, List);
 			

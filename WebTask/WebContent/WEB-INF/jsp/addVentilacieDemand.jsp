@@ -19,23 +19,31 @@
 				<img
 					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
 					width="40%" />
-				
 				<h1>
 				+375 29 336-25-26<br />
 				+375 29 336-25-26
 				</h1>
-	        </div>
-	      </div>
+				
+
+				
+			</div>
+
+		</div>
+	
+		<img
+					src="${pageContext.request. contextPath}/resources/images/image2.png"
+					width="100%" />
 		<br /> <br />
 	
 
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="ADDVENTILACIADEMAND" /> <br />
-				Описание<br />
-				<input type="text" name="describtion" value="" />
-				<input type="submit" value="Подать заявку" />
-			</form>
 
+			<form action="ImageController" method="post"
+				enctype="multipart/form-data">
+				Описание:<input type="text" name="describtion" value="" /><br /> 
+			    Файл:     <input type="file" name="file" id="file" /> <br />
+			     <input
+					type="submit" value="Загрузить" name="upload" id="upload" />
+			</form>
 			
 			<br />
 			

@@ -1,6 +1,8 @@
 package by.htp.service247.domain;
 
 public class Demand {
+	//private static final long serialVersionVID=-6544827707949518716L;
+	
 	private int id;
 	private int id_contractor;
 	private int id_client;
@@ -9,12 +11,13 @@ public class Demand {
 	private String describtion;
 	private String photo;
 	private String time;
+	private String address;
 	
 	public Demand() {
 	
 	}
 	public Demand(int id, int id_contractor, int id_client, String status_demand, String department, String describtion,
-			String photo, String time) {
+			String photo, String time,String address) {
 		super();
 		this.id = id;
 		this.id_contractor = id_contractor;
@@ -24,6 +27,7 @@ public class Demand {
 		this.describtion = describtion;
 		this.photo = photo;
 		this.time = time;
+		this.address = address;
 	}
 	public int getId() {
 		return id;
@@ -73,10 +77,17 @@ public class Demand {
 	public void setTime(String time) {
 		this.time = time;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((department == null) ? 0 : department.hashCode());
 		result = prime * result + ((describtion == null) ? 0 : describtion.hashCode());
 		result = prime * result + id;
@@ -96,6 +107,11 @@ public class Demand {
 		if (getClass() != obj.getClass())
 			return false;
 		Demand other = (Demand) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
 		if (department == null) {
 			if (other.department != null)
 				return false;
@@ -129,7 +145,6 @@ public class Demand {
 			return false;
 		return true;
 	}
-	
 	
 	
 

@@ -1,6 +1,11 @@
 package by.htp.service247.command.impl;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,6 +13,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -51,37 +58,41 @@ public class AddVentilaciaDemand implements Command {
 		final String describtion = request.getParameter(DESCRIBTION);
 		final String photo = "";
 		
+		
+		final Part filePart = request.getPart(FILE);
+
+		final String fileName = getFileName(filePart);
 		String page = null;
-		/*File uploadetFile = null;
+		File uploadetFile = null;
 		String pathImage;
 
 		pathImage = (PATH_IMAGE + fileName);
 		uploadetFile = new File(pathImage);
-*/
-		// create file
-		//uploadetFile.createNewFile();
 
-	//	OutputStream out = null;
-	//	InputStream filecontent = null;
-		//final PrintWriter writer = response.getWriter();
+		//create file
+		uploadetFile.createNewFile();
+
+		OutputStream out = null;
+		InputStream filecontent = null;
+		final PrintWriter writer = response.getWriter();
 
 		try {
-		//	out = new FileOutputStream(new File(pathImage));
+			out = new FileOutputStream(new File(pathImage));
 
-		//	filecontent = filePart.getInputStream();
+			filecontent = filePart.getInputStream();
 
-		//	int read = 0;
-		//	final byte[] bytes = new byte[1024];
+			int read = 0;
+			final byte[] bytes = new byte[1024];
 
-			//while ((read = filecontent.read(bytes)) != -1) {
-		//		out.write(bytes, 0, read);
-		//	}
+			while ((read = filecontent.read(bytes)) != -1) {
+				out.write(bytes, 0, read);
+			}
 
 			ServiceFactory factory = ServiceFactory.getInstance();
 			DemandService demandService = factory.getDemandService();
 
-			Demand demand = new Demand(0, contractor, id_client, status, department, describtion, photo, time);
-
+			Demand demand = new Demand(0, contractor, id_client, status, department, describtion, pathImage, time);
+			
 			demand  = demandService.addDemand(demand);
 
 			//int i = demand.getId();
@@ -103,7 +114,7 @@ public class AddVentilaciaDemand implements Command {
 			
 			
 		} finally {
-			/*if (out != null) {
+			if (out != null) {
 				out.close();
 			}
 			if (filecontent != null) {
@@ -111,10 +122,10 @@ public class AddVentilaciaDemand implements Command {
 			}
 			if (writer != null) {
 				writer.close();
-			}*/
+			}
 		}
 	}
-/*
+
 	private String getFileName(final Part part) {
 		final String partHeader = part.getHeader("content-disposition");
 		LOGGER.log(Level.INFO, "Part Header = {0}", partHeader);
@@ -126,7 +137,7 @@ public class AddVentilaciaDemand implements Command {
 		}
 		return null;
 	}
-*/
+
 }
 	
 

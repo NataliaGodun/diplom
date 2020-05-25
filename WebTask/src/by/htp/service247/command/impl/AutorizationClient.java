@@ -22,8 +22,16 @@ public class AutorizationClient implements Command {
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
 	
 	private static final String NAME_CLIENT = "firstName";
+	
+	
+	private static com.devcolibri.ssl.Sender sslSender = new com.devcolibri.ssl.Sender("nat_ush_ka@mail.ru", "ER567ghm");
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+	    //sslSender.send("This is Subject", "SSL: This is Natasha!", "nat_ush_ka@mail.ru", "natalia.godun1507@gmail.com");
+	   
 		Client client = null;
 		String login = request.getParameter(LOGIN);
 		String password = request.getParameter(PASSWORD);

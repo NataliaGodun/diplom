@@ -8,9 +8,11 @@ import by.htp.service247.command.impl.AddVentilaciaDemand;
 import by.htp.service247.command.impl.AutorizationClient;
 import by.htp.service247.command.impl.AutorizationContractor;
 import by.htp.service247.command.impl.DeleteDemand;
+import by.htp.service247.command.impl.EditDemand;
+import by.htp.service247.command.impl.EditDemandForm;
 import by.htp.service247.command.impl.Exit;
 import by.htp.service247.command.impl.GetImage;
-import by.htp.service247.command.impl.Registration;
+
 import by.htp.service247.command.impl.SelectDepartmentForm;
 import by.htp.service247.command.impl.ShowAddDemandForm;
 import by.htp.service247.command.impl.ShowAllDemands;
@@ -44,7 +46,10 @@ public class CommandProvider {
 		commands.put(CommandName.ADDVENTILACIADEMAND, new AddVentilaciaDemand());
 		commands.put(CommandName.SHOWALLDEMANS, new ShowAllDemands());
 		commands.put(CommandName.DELETEDEMAND, new DeleteDemand());
-		commands.put(CommandName.REGISTRATION, new Registration());
+		commands.put(CommandName.EDITDEMAND, new EditDemand());
+		commands.put(CommandName.EDITDEMANDFORM, new EditDemandForm());
+		//commands.put(CommandName.REGISTRATION, new Registration());
+		commands.put(CommandName.GETIMAGE, new GetImage());
 		
 		commands.put(CommandName.EXIT, new Exit());
 	

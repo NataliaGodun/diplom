@@ -30,9 +30,10 @@ public class ShowAllDemands implements Command {
 
 			ServiceFactory factory = ServiceFactory.getInstance();
 			DemandService demandService = factory.getDemandService();
+			int id =1;
 
 			try {
-				ArrayList<Demand> List = demandService.showDemand();
+				ArrayList<Demand> List = demandService.showDemand(id);
 				if (List.size() == 0) {
 
 					request.setAttribute(MESSAGE_INFO, MESSAGE_NO_BOOKS);
