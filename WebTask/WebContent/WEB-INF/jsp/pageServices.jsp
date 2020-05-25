@@ -30,51 +30,20 @@
 					src="${pageContext.request. contextPath}/resources/images/image2.png"
 					width="100%" />
 		<br /> <br />
-			<c:if test="${not empty  requestScope.messageWrongDelate }">
-			<br />
-			<c:out value="${  requestScope.messageWrongDelate }" />
-			<br />
-		</c:if>
+			
 		
-		
-<c:forEach items="${requestScope.List}" var="List">
-	<div id="image">
-							<c:if test="${not empty  List.photo}">
-								<img
-									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${List.photo}"
-									width="50%" />
-							</c:if>
-						</div>
 
-							<br /> <strong>Отдел</strong>
-							<c:out value=" ${List.department}" />		
-							<br /><strong>Описание</strong>
-							<c:out value=" ${List.describtion}" />		
-							<br /> <strong>Дата</strong>
-							<c:out value=" ${List.time}" />
-							<br /> <strong>Статус</strong>
-							<c:out value=" ${List.status_demand}" />
-							
-							<br />
 							
 						
 		
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="DELETEDEMAND" /> 
-								<input type="hidden" name="id" value="${List.id}" /> 
-								<input type="hidden" name="status" value="${List.status_demand}" />
-								<input	type="submit" value="Удалить заявку"  />
+								<input type="hidden" name="command" value="SHOWLOGINFORMCLIENT" /> 
+								
+								<input	type="submit" value="Войти как клиент"  />
 							</form>
-							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="EDITDEMANDFORM" />
-								<input type="hidden" name="id" value="${List.id}" /> 
-								<input type="hidden" name="describtion" value="${List.describtion}" />
-								<input type="hidden" name="department" value="${List.department}" /> 
-								 <input type="submit" value="Редактировать" />
-							</form>
+							
 	
-					<br />
-				</c:forEach>
+				
 			<br />
 			
 			<br />

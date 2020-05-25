@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import by.htp.service247.dao.ClientDAO;
-import by.htp.service247.dao.PropositionDAO;
+
 import by.htp.service247.dao.exception.DAOException;
 import by.htp.service247.dao.factory.DAOFactory;
 import by.htp.service247.domain.Client;
@@ -23,10 +23,16 @@ public class ClientServiceImpl implements ClientService {
 
 	@Override
 	public Client authorization(String login, String password) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		DAOFactory daoObjectFactory = DAOFactory.getInstance();
+		ClientDAO clientDAO = daoObjectFactory.getClientDAO();
+		try {
+			return clientDAO.authorization(login, password);
+		} catch (DAOException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_LAYER_DAO, e);
+			throw new ServiceException(e);
+		}
 	}
-
+	
 	@Override
 	public Client registration(Client client) throws ServiceException {
 		// TODO Auto-generated method stub
@@ -44,13 +50,6 @@ public class ClientServiceImpl implements ClientService {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
-
-	
-	
-
-	
 
 	
 	
