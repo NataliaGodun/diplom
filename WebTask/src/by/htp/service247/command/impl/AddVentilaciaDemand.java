@@ -27,6 +27,7 @@ import by.htp.service247.service.factory.ServiceFactory;
 
 public class AddVentilaciaDemand implements Command {
 	private static final String DESCRIBTION = "describtion";
+	private static final String ADDRESS= "address";
 	private static final String NAME_WRITER = "writer";
 	private static final String GENRE = "genre";
 	private static final String HOUSE = "house";
@@ -46,7 +47,7 @@ public class AddVentilaciaDemand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType(CONTENT_TYPE_TEXT_HTML);
-		
+		 System.out.println("1");
 		Date dateNow = new Date();
 	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd 'в' hh:mm:ss");
 	    final String time = formatForDateNow.format(dateNow);
@@ -56,7 +57,7 @@ public class AddVentilaciaDemand implements Command {
 		final String status = "Новая заявка";
 		final String  department="Вентиляция";
 		final String describtion = request.getParameter(DESCRIBTION);
-		final String photo = "";
+		final String address = request.getParameter(ADDRESS);
 		
 		
 		final Part filePart = request.getPart(FILE);
@@ -91,8 +92,8 @@ public class AddVentilaciaDemand implements Command {
 			ServiceFactory factory = ServiceFactory.getInstance();
 			DemandService demandService = factory.getDemandService();
 
-			Demand demand = new Demand(0, contractor, id_client, status, department, describtion, pathImage, time);
-			
+			Demand demand = new Demand(0, contractor, id_client, status, department, describtion, pathImage, time,address);
+			 System.out.println(demand.getDescribtion());
 			demand  = demandService.addDemand(demand);
 
 			//int i = demand.getId();

@@ -19,7 +19,6 @@ public final class DAOFactory {
 	
 	private final DemandDAO sqlDemandImpl = new SQLDemandDAO();
 	private final ClientDAO sqlClientImpl = new SQLClientDAO();
-
 	private final ContractorDAO sqlContractorImpl = new SQLContractorDAO();
 
 

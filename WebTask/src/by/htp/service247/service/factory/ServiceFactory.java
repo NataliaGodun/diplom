@@ -19,10 +19,9 @@ import by.htp.service247.service.impl.DemandServiceImpl;
 public class ServiceFactory {
 	private final static ServiceFactory instance = new ServiceFactory();
 	
-	
 
 	private final ClientService clientService = new ClientServiceImpl();
-	
+	private final DemandService demandService = new DemandServiceImpl();
 
 	public static ServiceFactory getInstance() {
 		return instance;
@@ -30,6 +29,11 @@ public class ServiceFactory {
 
 	public ClientService getClientService() {
 		return clientService;
+	}
+
+	public DemandService getDemandService() {
+		
+		return demandService;
 	}
 
 	
