@@ -21,6 +21,7 @@ import by.htp.service247.domain.Demand;
 public class SQLDemandDAO implements DemandDAO {
 
 	private static final String SELECT_ALL_DEMAND_CLIENT = "SELECT * FROM DEMAND WHERE ID_CLIENT=?";
+	private static final String TAKE_DEMAND_FROM_ID = "SELECT * FROM DEMAND WHERE ID=?";
 	private static final String ADD_DEMAND = "INSERT INTO DEMAND (id_contractor, id_client, status_demand, department, describtion,photo, time, address ) VALUES(?,?,?,?,?,?,?,?)";
 	private static final String DEMAND_SELECT = "SELECT * FROM DEMAND WHERE describtion=? AND time=? ";
 	private static final String SELECT_BOOK_ID = "SELECT * FROM BOOKS WHERE ID=? AND STATUS='EXIST' ";
@@ -164,6 +165,53 @@ public class SQLDemandDAO implements DemandDAO {
 	public ArrayList<Demand> showDemand(String department) throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	@Override
+	public Demand viewDemand(int id) throws DAOException {
+		Connection con = null;
+		ResultSet rs = null;
+		Demand demand=null;
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
+		 
+		try {
+			con = cp.takeConnection();
+			PreparedStatement ps = con.prepareStatement(TAKE_DEMAND_FROM_ID );
+
+			ps.setInt(FIRST, id);
+			
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				int idDB = rs.getInt(FIRST);
+				int id_contractor = rs.getInt(SECOND);
+				int  id_client = rs.getInt(THIRD);
+				String status_demand = rs.getString(FOURTH);
+				String department = rs.getString(FIFTH);
+				String describtion = rs.getString(SIXTH);
+				String photo = rs.getString(SEVENTH);
+				String time = rs.getString(EIGTTH);
+				String address = rs.getString(NINETH );
+				demand = new Demand(idDB, id_contractor, id_client, status_demand, department, describtion, photo,time,address );
+			
+				}
+
+		} catch (ConnectionPoolException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_CONNECTION_POOL, e);
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_SQL, e);
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+				//LOGGER.log(Level.ERROR, MESSAGE_ERROR_REMOVE_CONNECTION, e);
+			}
+		}
+		
+		return demand;
 	}
 	
 

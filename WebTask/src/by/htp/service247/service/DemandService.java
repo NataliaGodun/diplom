@@ -15,5 +15,6 @@ public interface DemandService {
 	void deleteDemand(int id) throws ServiceException;
 
 	Demand editDemand(Demand demand)throws ServiceException;
+	Demand viewDemand(int id) throws ServiceException;
 
 }

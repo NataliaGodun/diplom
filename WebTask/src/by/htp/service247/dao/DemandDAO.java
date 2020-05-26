@@ -19,6 +19,7 @@ public interface DemandDAO {
 
 
 	Demand editDemand(Demand demand)throws DAOException;
+	Demand viewDemand(int id) throws DAOException;
 
 	
 

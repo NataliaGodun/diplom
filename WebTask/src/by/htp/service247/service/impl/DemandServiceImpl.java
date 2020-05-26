@@ -75,6 +75,18 @@ public class DemandServiceImpl implements DemandService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Demand viewDemand(int id) throws ServiceException {
+		DAOFactory daoObjectFactory = DAOFactory.getInstance();
+		DemandDAO demandDAO = daoObjectFactory.getDemandDAO();
+		try {
+			return demandDAO.viewDemand(id);
+		} catch (DAOException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_LAYER_DAO, e);
+			throw new ServiceException(e);
+		}
+	}
 	
 
 }

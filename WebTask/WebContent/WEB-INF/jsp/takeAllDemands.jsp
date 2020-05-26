@@ -46,24 +46,25 @@
 							</c:if>
 						</div>
 
-							<br /> <strong>Отдел</strong>
+							<br /> <strong>Отдел:</strong>
 							<c:out value=" ${List.department}" />		
-							<br /><strong>Описание</strong>
+							<br /><strong>Описание:</strong>
 							<c:out value=" ${List.describtion}" />		
-							<br /> <strong>Дата</strong>
+							<br /> <strong>Дата:</strong>
 							<c:out value=" ${List.time}" />
-							<br /> <strong>Статус</strong>
-							<c:out value=" ${List.status_demand}" />
-							
 							<br />
-							
+							<form action="Controller" method="get">
+								<input type="hidden" name="command" value="VIEWDEMAND" /> 
+								<input type="hidden" name="id" value="${List.id}" /> 
+								<input	type="submit" value="Просмотреть заявку"  />
+							</form>
 						
 		
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="DELETEDEMAND" /> 
 								<input type="hidden" name="id" value="${List.id}" /> 
 								<input type="hidden" name="status" value="${List.status_demand}" />
-								<input	type="submit" value="Просмотреть заявку"  />
+								<input	type="submit" value="Удалить заявку"  />
 							</form>
 							
 					<br />

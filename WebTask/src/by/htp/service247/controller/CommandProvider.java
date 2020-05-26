@@ -22,6 +22,7 @@ import by.htp.service247.command.impl.ShowLoginFormClient;
 import by.htp.service247.command.impl.ShowLoginFormContractor;
 import by.htp.service247.command.impl.ShowRegistrationForm;
 import by.htp.service247.command.impl.VentilaciaDemandForm;
+import by.htp.service247.command.impl.ViewDemand;
 import by.htp.service247.command.impl.ViewPageServices;
 
 
@@ -48,7 +49,7 @@ public class CommandProvider {
 		commands.put(CommandName.DELETEDEMAND, new DeleteDemand());
 		commands.put(CommandName.EDITDEMAND, new EditDemand());
 		commands.put(CommandName.EDITDEMANDFORM, new EditDemandForm());
-		//commands.put(CommandName.REGISTRATION, new Registration());
+		commands.put(CommandName.VIEWDEMAND, new ViewDemand());
 		commands.put(CommandName.GETIMAGE, new GetImage());
 		
 		commands.put(CommandName.EXIT, new Exit());
