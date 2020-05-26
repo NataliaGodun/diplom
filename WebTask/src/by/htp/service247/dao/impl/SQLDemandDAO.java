@@ -24,9 +24,10 @@ public class SQLDemandDAO implements DemandDAO {
 	private static final String TAKE_DEMAND_FROM_ID = "SELECT * FROM DEMAND WHERE ID=?";
 	private static final String ADD_DEMAND = "INSERT INTO DEMAND (id_contractor, id_client, status_demand, department, describtion,photo, time, address ) VALUES(?,?,?,?,?,?,?,?)";
 	private static final String DEMAND_SELECT = "SELECT * FROM DEMAND WHERE describtion=? AND time=? ";
-	private static final String SELECT_BOOK_ID = "SELECT * FROM BOOKS WHERE ID=? AND STATUS='EXIST' ";
-	private static final String DELETE_BOOK_ID = "UPDATE BOOKS SET STATUS='DELETE' WHERE ID=?";
-	private static final String SELECT_NAME_OF_BOOK = "SELECT * FROM BOOKS WHERE NAMEBOOK=? AND STATUS='EXIST' ";
+	private static final String DEMAND_SELECT_ID = "SELECT * FROM DEMAND WHERE ID=? ";
+	private static final String EDIT_DEMAND_CLIENT = "UPDATE DEMAND SET  describtion=?, photo=?, time=?,  address=? WHERE ID=?";
+	//private static final String EDIT_DEMAND_CLIENT = "UPDATE DEMAND SET id_contractor, id_client, status_demand, department, describtion, photo, time, address) VALUES(?,?,?,?,?,?,?,?) WHERE ID=?";
+	
 	private static final String MESSAGE_ERROR_CONNECTION_POOL = "Error at connection pool.";
 	private static final String MESSAGE_ERROR_SQL = "Error at sql.";
 	private static final String MESSAGE_ERROR_REMOVE_CONNECTION = "Error at remove connection.";
@@ -157,8 +158,61 @@ public class SQLDemandDAO implements DemandDAO {
 
 	@Override
 	public Demand editDemand(Demand demand) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		Connection con = null;
+		ResultSet rs = null;
+		Demand demandNew = null;
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
+		System.out.println("σορ δΰξ" );
+		try {
+			con = cp.takeConnection();
+
+			PreparedStatement ps = con.prepareStatement(EDIT_DEMAND_CLIENT);
+			
+			
+			ps.setString(FIRST, demand.getDescribtion());
+			ps.setString(SECOND, demand.getPhoto());
+			ps.setString(THIRD, demand.getTime());
+			ps.setString(FOURTH, demand.getAddress());
+			ps.setInt(FIFTH, demand.getId());
+			ps.executeUpdate();
+			System.out.println("σορ δΰξ2" );
+			ps = con.prepareStatement(DEMAND_SELECT_ID );
+			ps.setInt(FIRST, demand.getId());
+			
+			
+			rs = ps.executeQuery();
+			System.out.println("σορ δΰξ 3" );
+			while (rs.next()) {
+				int id = rs.getInt(FIRST);
+				int id_contractor = rs.getInt(SECOND);
+				int  id_client = rs.getInt(THIRD);
+				String status_demand = rs.getString(FOURTH);
+				String department = rs.getString(FIFTH);
+				String describtion = rs.getString(SIXTH);
+				String photo = rs.getString(SEVENTH);
+				String time = rs.getString(EIGTTH);
+				String address = rs.getString(NINETH );
+				System.out.println("σορ δΰξ4" );
+				demandNew = new Demand(id, id_contractor, id_client, status_demand, department, describtion, photo,time,address );
+			}
+			
+		} catch (ConnectionPoolException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_CONNECTION_POOL, e);
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_SQL, e);
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+				//LOGGER.log(Level.ERROR, MESSAGE_ERROR_REMOVE_CONNECTION, e);
+			}
+		}
+
+		return demandNew;
 	}
 
 	@Override

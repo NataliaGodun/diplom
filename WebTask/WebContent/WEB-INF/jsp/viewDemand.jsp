@@ -45,7 +45,8 @@
 									width="50%" />
 							</c:if>
 						</div>
-
+							 <strong>Идентификационный номер заявки: </strong>
+							<c:out value="${demand.id }" /><br />
 							<br /> <strong>Отдел:</strong>
 							<c:out value=" ${demand.department}" />	
 							<br /> <strong>Статус:</strong>
@@ -60,7 +61,7 @@
 							
 							<c:if test="${not empty  requestScope.messageNewDemand }">
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="EDITDEMAND" /> 
+								<input type="hidden" name="command" value="EDITDEMANDFORM" /> 
 								<input type="hidden" name="id" value="${demand.id}" /> 
 								<input	type="submit" value="Редактировать заявку"  />
 							</form>

@@ -35,16 +35,21 @@
 		
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="EDITDEMAND" /> 
-				<input type="hidden" name="id" value="${requestScope.id }" /> 			
-				<input type="hidden" name="department" value="${requestScope.department }" /> 
+				<input type="hidden" name="id" value="${demand.id }" /> 
+				<input type="hidden" name="id_client" value="${demand.id_client }" /> 
+				<input type="hidden" name="photo" value="${demand.photo }" /> 	
+				<input type="hidden" name="department" value="${demand.department}" /> 						
 				 <strong>Идентификационный номер заявки: </strong>
-				<c:out value="${requestScope.id }" /><br />
+				<c:out value="${demand.id }" /><br />
 				<strong>Отдел: </strong>
-				<c:out value="${requestScope.department }" /><br />
+				<c:out value="${demand.department }" /><br />
 				<strong>Заявка: </strong>
-				<c:out value="${requestScope.describtion }" /><br />
+				<c:out value="${demand.describtion }" /><br />
+				<strong>Адрес: </strong>
+				<c:out value="${demand.address }" /><br />
 				<strong>Внесите изменения: </strong>
 				<input type="text" name="describtion" value="" />
+				<input type="text" name="address" value="" />
 				<input type="submit" value="Готово!" />
 			</form>
 	
