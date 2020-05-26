@@ -21,9 +21,9 @@ public class DemandServiceImpl implements DemandService {
 			DAOFactory daoObjectFactory = DAOFactory.getInstance();
 			DemandDAO demandDAO = daoObjectFactory.getDemandDAO();
 			ArrayList<Demand> List = null;
-			int id1=1;
+			
 			try {
-				List = demandDAO.showDemand(id1);
+				List = demandDAO.showDemand(id);
 			} catch (DAOException e) {
 				//LOGGER.log(Level.ERROR, MESSAGE_ERROR_LAYER_DAO, e);
 				throw new ServiceException(e);

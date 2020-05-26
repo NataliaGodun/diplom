@@ -7,6 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import by.htp.service247.command.Command;
 import by.htp.service247.domain.Demand;
@@ -15,6 +16,7 @@ import by.htp.service247.service.exception.ServiceException;
 import by.htp.service247.service.factory.ServiceFactory;
 
 public class ShowAllDemands implements Command {
+	private static final String ID_CLIENTA = "id";
 	private static final String LIST = "List";
 	private static final String MESSAGE_NO_BOOKS = " There are no available books";
 	private static final String MESSAGE_ABOUT_PROBLEM = "Sorry,technical problem";
@@ -27,13 +29,18 @@ public class ShowAllDemands implements Command {
 	//private static final Logger LOGGER = LogManager.getRootLogger();
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+			
+			HttpSession session = request.getSession(true);
+		
+			int id_client=(int) session.getAttribute(ID_CLIENTA);
+		
+		
 			ServiceFactory factory = ServiceFactory.getInstance();
 			DemandService demandService = factory.getDemandService();
-			int id =1;
+			
 
 			try {
-				ArrayList<Demand> List = demandService.showDemand(id);
+				ArrayList<Demand> List = demandService.showDemand(id_client);
 				if (List.size() == 0) {
 
 					request.setAttribute(MESSAGE_INFO, MESSAGE_NO_BOOKS);

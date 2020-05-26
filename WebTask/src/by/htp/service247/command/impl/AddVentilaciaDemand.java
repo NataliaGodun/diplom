@@ -45,7 +45,7 @@ public class AddVentilaciaDemand implements Command {
 	private static final String MESSAGE_ERROR_ADDITION_BOOK = "Error at addition of the book.";
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
 	private static final Logger LOGGER = LogManager.getRootLogger();
-	private static final String ID = "id";
+	private static final String ID_CLIENTA = "id";
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,7 +53,7 @@ public class AddVentilaciaDemand implements Command {
 		
 		HttpSession session = request.getSession(true);
 		
-		int id_client=(int) session.getAttribute(ID);
+		int id_client=(int) session.getAttribute(ID_CLIENTA);
 		
 		Date dateNow = new Date();
 	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd 'â' hh:mm:ss");
