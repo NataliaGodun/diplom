@@ -30,41 +30,53 @@
 					src="${pageContext.request. contextPath}/resources/images/image2.png"
 					width="100%" />
 		<br /> <br />
-			
+			<c:if test="${not empty  requestScope.messageWrongDelate }">
+			<br />
+			<c:out value="${  requestScope.messageWrongDelate }" />
+			<br />
+		</c:if>
 		
 		
-<c:forEach items="${requestScope.List}" var="List">
+
 	<div id="image">
-							<c:if test="${not empty  List.photo}">
+							<c:if test="${not empty  demand.photo}">
 								<img
-									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${List.photo}"
+									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${demand.photo}"
 									width="50%" />
 							</c:if>
 						</div>
 
 							<br /> <strong>Отдел:</strong>
-							<c:out value=" ${List.department}" />		
+							<c:out value=" ${demand.department}" />	
+							<br /> <strong>Статус:</strong>
+							<c:out value=" ${demand.status_demand}" />		
 							<br /><strong>Описание:</strong>
-							<c:out value=" ${List.describtion}" />		
+							<c:out value=" ${demand.describtion}" />		
 							<br /> <strong>Дата:</strong>
-							<c:out value=" ${List.time}" />
+							<c:out value=" ${demand.time}" />
+							<br /> <strong>Адрес:</strong>
+							<c:out value=" ${demand.address}" />
 							<br />
+							
+							<c:if test="${not empty  requestScope.messageNewDemand }">
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="VIEWDEMAND" /> 
-								<input type="hidden" name="id" value="${List.id}" /> 
-								<input	type="submit" value="Просмотреть заявку"  />
+								<input type="hidden" name="command" value="EDITDEMAND" /> 
+								<input type="hidden" name="id" value="${demand.id}" /> 
+								<input	type="submit" value="Редактировать заявку"  />
 							</form>
 						
 		
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="DELETEDEMAND" /> 
-								<input type="hidden" name="id" value="${List.id}" /> 
-								<input type="hidden" name="status" value="${List.status_demand}" />
+								<input type="hidden" name="id" value="${demand.id}" /> 
 								<input	type="submit" value="Удалить заявку"  />
 							</form>
+			
+							</c:if>
+							
 							
 					<br />
-				</c:forEach>
+				
 			<br />
 			
 			<br />
