@@ -44,6 +44,7 @@
 
 
 			<form action="Controller" method="get">
+			
 				<input type="hidden" name="command" value="SHOWADDDEMANDFORM" /> <br />
 				<input type="submit" value="Подать заявку" />
 			</form>

@@ -13,6 +13,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import org.apache.logging.log4j.Level;
@@ -27,6 +28,7 @@ import by.htp.service247.service.factory.ServiceFactory;
 
 public class AddVentilaciaDemand implements Command {
 	private static final String DESCRIBTION = "describtion";
+	private static final String DEPARTMENT = "department";
 	private static final String ADDRESS= "address";
 	private static final String NAME_WRITER = "writer";
 	private static final String GENRE = "genre";
@@ -43,20 +45,26 @@ public class AddVentilaciaDemand implements Command {
 	private static final String MESSAGE_ERROR_ADDITION_BOOK = "Error at addition of the book.";
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
 	private static final Logger LOGGER = LogManager.getRootLogger();
+	private static final String ID = "id";
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType(CONTENT_TYPE_TEXT_HTML);
-		 System.out.println("1");
+		
+		HttpSession session = request.getSession(true);
+		
+		int id_client=(int) session.getAttribute(ID);
+		
 		Date dateNow = new Date();
 	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd 'в' hh:mm:ss");
 	    final String time = formatForDateNow.format(dateNow);
 		
 		final int contractor = 0;	
-		final int id_client = 1;
+		
 		final String status = "Новая заявка";
-		final String  department="Вентиляция";
+		final String  department=request.getParameter(DEPARTMENT);
 		final String describtion = request.getParameter(DESCRIBTION);
+		System.out.println("describtion="+describtion);
 		final String address = request.getParameter(ADDRESS);
 		
 		

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	import="by.htp.service247.domain.User" pageEncoding="utf-8"%>
+pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,8 +47,19 @@
 
 
 			<form action="Controller" method="get">
+			<input type="hidden" name="department" value="Вентиляция и кондиционирование" /> <br />
 				<input type="hidden" name="command" value="VENTILACIADEMAND" /> <br />
-				<input type="submit" value="Вентил" />
+				<input type="submit" value="Вентиляция и кондиционирование" />
+			</form>
+			<form action="Controller" method="get">
+			<input type="hidden" name="department" value="Водоснабжение и канализация" /> <br />
+				<input type="hidden" name="command" value="VENTILACIADEMAND" /> <br />
+				<input type="submit" value="Водоснабжение и канализация" />
+			</form>
+			<form action="Controller" method="get">
+			<input type="hidden" name="department" value="Электроснабжение" /> <br />
+				<input type="hidden" name="command" value="VENTILACIADEMAND" /> <br />
+				<input type="submit" value="Электроснабжение" />
 			</form>
 
 			

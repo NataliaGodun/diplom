@@ -51,7 +51,7 @@ public class SQLDemandDAO implements DemandDAO {
 		Demand demand2=null;
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
 		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
-		 System.out.println(demand.getDescribtion());
+		 
 		try {
 			con = cp.takeConnection();
 
@@ -67,12 +67,12 @@ public class SQLDemandDAO implements DemandDAO {
 			ps.setString(EIGTTH, demand.getAddress());
 
 			ps.executeUpdate();
-			System.out.println("Plt");
+			
 			ps = con.prepareStatement(DEMAND_SELECT );
 			ps.setString(FIRST, demand.getDescribtion());
 			ps.setString(SECOND, demand.getTime());
 			rs = ps.executeQuery();
-			System.out.println("Plt2");
+			
 			while (rs.next()) {
 				int id = rs.getInt(FIRST);
 				int id_contractor = rs.getInt(SECOND);
@@ -99,7 +99,7 @@ public class SQLDemandDAO implements DemandDAO {
 				//LOGGER.log(Level.ERROR, MESSAGE_ERROR_REMOVE_CONNECTION, e);
 			}
 		}
-		System.out.println(demand.getDescribtion());
+		
 		return demand2;
 	}
 

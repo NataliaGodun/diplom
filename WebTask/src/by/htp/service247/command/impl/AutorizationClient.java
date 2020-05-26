@@ -17,6 +17,7 @@ import by.htp.service247.service.factory.ServiceFactory;
 
 public class AutorizationClient implements Command {
 	private static final String LOGIN = "login";
+	private static final String ID = "id";
 	private static final String PASSWORD = "password";
 	private static final String CLIENT= "client";
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
@@ -44,11 +45,12 @@ public class AutorizationClient implements Command {
 			if (client != null) {
 				
 				String firstName = client.getFirstName();
+				int id = client.getId();
 				HttpSession session = request.getSession(true);
 
 				session.setAttribute(NAME_CLIENT, firstName);
-				
-				session.setAttribute(LOGIN, login);
+				session.setAttribute(ID, id);
+				//session.setAttribute(LOGIN, login);
 				request.setAttribute(CLIENT, client);
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CLIENT_JSP);

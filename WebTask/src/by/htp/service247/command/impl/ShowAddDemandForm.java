@@ -14,8 +14,7 @@ public class ShowAddDemandForm implements Command {
 	private static final String SELECT_DEPARTMENT_JSP = "WEB-INF/jsp/selectDepartment.jsp";
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
-		session.invalidate();
+		
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher( SELECT_DEPARTMENT_JSP);
 		dispatcher.forward(request, response);
