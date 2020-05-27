@@ -46,8 +46,7 @@ public class DemandServiceImpl implements DemandService {
 
 	@Override
 	public void deleteDemand(int id) throws ServiceException {
-		//ValidationBook.validateBook(id);
-
+		
 		DAOFactory daoObjectFactory = DAOFactory.getInstance();
 		DemandDAO demandDAO = daoObjectFactory.getDemandDAO();
 		try {

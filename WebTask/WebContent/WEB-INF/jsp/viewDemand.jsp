@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/styleNew2.css" />" />
 </head>
 <body>
 
@@ -30,21 +30,22 @@
 					src="${pageContext.request. contextPath}/resources/images/image2.png"
 					width="100%" />
 		<br /> <br />
-			<c:if test="${not empty  requestScope.messageWrongDelate }">
+			<c:if test="${not empty  requestScope.messageWrongDelete }">
 			<br />
-			<c:out value="${  requestScope.messageWrongDelate }" />
+			<c:out value="${  requestScope.messageWrongDelete }" />
 			<br />
 		</c:if>
 		
-		
+
 
 	<div id="image">
 							<c:if test="${not empty  demand.photo}">
 								<img
 									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${demand.photo}"
-									width="50%" />
+									width="80%" />
 							</c:if>
 						</div>
+								
 							 <strong>Идентификационный номер заявки: </strong>
 							<c:out value="${demand.id }" /><br />
 							<br /> <strong>Отдел:</strong>
@@ -57,15 +58,17 @@
 							<c:out value=" ${demand.time}" />
 							<br /> <strong>Адрес:</strong>
 							<c:out value=" ${demand.address}" />
-							<br />
+							<br /><br />
+		
 							
 							<c:if test="${not empty  requestScope.messageNewDemand }">
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="EDITDEMANDFORM" /> 
 								<input type="hidden" name="id" value="${demand.id}" /> 
 								<input	type="submit" value="Редактировать заявку"  />
-							</form>
+							</form><br />
 						
+		
 		
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="DELETEDEMAND" /> 
@@ -74,19 +77,13 @@
 							</form>
 			
 							</c:if>
-							
-							
-					<br />
-				
-			<br />
-			
-			<br />
+		<br />
 			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="exit" /> <br /> <input
+				<input type="hidden" name="command" value="exit" />  <input
 					type="submit" value="Выход" />
 			</form>
-		</div>
-
+			</div>
+		
 		
 
 </body>

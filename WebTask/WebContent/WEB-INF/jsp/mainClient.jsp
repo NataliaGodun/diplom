@@ -33,28 +33,25 @@
 			<div id="content">
 		
 		<div id="welcome">
-			<h1>
+			 <strong>
 				Добро пожаловать
 				,
 				<c:out value="${sessionScope.firstName}" />
 				!
-			</h1>
-
-		</div>
-
-
-			<form action="Controller" method="get">
 			
-				<input type="hidden" name="command" value="SHOWADDDEMANDFORM" /> <br />
-				<input type="submit" value="Подать заявку" />
-			</form>
+ </strong>
+		</div>
 
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="SHOWALLDEMANS" /> <br />
 				<input type="submit" value="Просмотреть все заявки" />
 			</form>
 
+			<form action="Controller" method="get">
 			
+				<input type="hidden" name="command" value="SHOWADDDEMANDFORM" /> <br />
+				<input type="submit" value="Подать заявку" />
+			</form>
 			<br />
 			
 			<br />

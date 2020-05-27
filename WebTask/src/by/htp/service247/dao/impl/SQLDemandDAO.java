@@ -26,8 +26,7 @@ public class SQLDemandDAO implements DemandDAO {
 	private static final String DEMAND_SELECT = "SELECT * FROM DEMAND WHERE describtion=? AND time=? ";
 	private static final String DEMAND_SELECT_ID = "SELECT * FROM DEMAND WHERE ID=? ";
 	private static final String EDIT_DEMAND_CLIENT = "UPDATE DEMAND SET  describtion=?, photo=?, time=?,  address=? WHERE ID=?";
-	//private static final String EDIT_DEMAND_CLIENT = "UPDATE DEMAND SET id_contractor, id_client, status_demand, department, describtion, photo, time, address) VALUES(?,?,?,?,?,?,?,?) WHERE ID=?";
-	
+	private static final String DELETE_DEMAND_ID = "DELETE FROM DEMAND WHERE ID=?";	
 	private static final String MESSAGE_ERROR_CONNECTION_POOL = "Error at connection pool.";
 	private static final String MESSAGE_ERROR_SQL = "Error at sql.";
 	private static final String MESSAGE_ERROR_REMOVE_CONNECTION = "Error at remove connection.";
@@ -152,8 +151,31 @@ public class SQLDemandDAO implements DemandDAO {
 
 	@Override
 	public void deleteDemand(int id) throws DAOException {
-		// TODO Auto-generated method stub
-		
+		Connection con = null;
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
+		try {
+			con = cp.takeConnection();
+
+			PreparedStatement ps = con.prepareStatement(DELETE_DEMAND_ID);
+			ps.setInt(FIRST, id);
+
+			ps.executeUpdate();
+
+		} catch (ConnectionPoolException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_CONNECTION_POOL, e);
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_SQL, e);
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+				//LOGGER.log(Level.ERROR, MESSAGE_ERROR_REMOVE_CONNECTION, e);
+			}
+		}
 	}
 
 	@Override

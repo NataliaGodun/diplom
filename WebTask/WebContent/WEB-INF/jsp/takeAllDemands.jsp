@@ -29,24 +29,27 @@
 		<img
 					src="${pageContext.request. contextPath}/resources/images/image2.png"
 					width="100%" />
-		<br /> <br />
+	
 			
-		
-		
+		<c:if test="${not empty  requestScope.messageInfo }">
+			<br />
+			Ваша заявка успешно удалена!
+			<br />
+		</c:if>
+<div id="inline">
+			<div id="content">
+  				 <div id="center">
+		<strong>Перечень заявок:</strong><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">
-							<c:if test="${not empty  List.photo}">
-								<img
-									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${List.photo}"
-									width="50%" />
-							</c:if>
+							
 						</div>
 
 							<br /> <strong>Отдел:</strong>
 							<c:out value=" ${List.department}" />		
 							<br /><strong>Описание:</strong>
 							<c:out value=" ${List.describtion}" />		
-							<br /> <strong>Дата:</strong>
+							<br /> <strong>Дата и время:</strong>
 							<c:out value=" ${List.time}" />
 							<br />
 							<form action="Controller" method="get">
@@ -55,18 +58,12 @@
 								<input	type="submit" value="Просмотреть заявку"  />
 							</form>
 						
-		
-							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="DELETEDEMAND" /> 
-								<input type="hidden" name="id" value="${List.id}" /> 
-								<input type="hidden" name="status" value="${List.status_demand}" />
-								<input	type="submit" value="Удалить заявку"  />
-							</form>
-							
 					<br />
 				</c:forEach>
 			<br />
-			
+</div>
+		</div>
+		</div>	
 			<br />
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="exit" /> <br /> <input

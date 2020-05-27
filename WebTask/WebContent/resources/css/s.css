@@ -19,11 +19,11 @@ html, body {
 }
 #language{
 	display:inline-block;
-	float:right;
-	margin-right:25px; 
+	float:left;
+
 }
 #languageRu{
-	float:right;
+	float:left;
 }
 #languageEn{
 	float:right;	
@@ -64,7 +64,7 @@ html, body {
 }
 #center{
     margin-top: 60px;
-    margin-left: 130px;
+  //  margin-left: 130px;
     float: left;
 	display:block;
     width:60%;
@@ -96,10 +96,20 @@ html, body {
 }
 #image{
 	float: left; 
-   	margin-left: 30px;
+  
 }
 #information{
-	margin: 70px 0px 50px 0px;
+	margin: -30px 0px 10px 0px;
+}
+#viewDemand{
+	display:inline-block;
+	float:left;
+
+}
+#oneLine{
+	display:inline-block;
+
+
 }
 
 
