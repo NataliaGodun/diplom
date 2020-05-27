@@ -19,8 +19,14 @@ public class ContractorServiceImpl implements ContractorService {
 
 	@Override
 	public Contractor authorization(String login, String password) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		DAOFactory daoObjectFactory = DAOFactory.getInstance();
+		ContractorDAO contractorDAO = daoObjectFactory.getContractorDAO();
+		try {
+			return contractorDAO.authorization(login, password);
+		} catch (DAOException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_LAYER_DAO, e);
+			throw new ServiceException(e);
+		}
 	}
 
 	@Override

@@ -22,6 +22,7 @@ public class ServiceFactory {
 
 	private final ClientService clientService = new ClientServiceImpl();
 	private final DemandService demandService = new DemandServiceImpl();
+	private final ContractorService contractorService = new ContractorServiceImpl();
 
 	public static ServiceFactory getInstance() {
 		return instance;
@@ -34,6 +35,11 @@ public class ServiceFactory {
 	public DemandService getDemandService() {
 		
 		return demandService;
+	}
+
+	public ContractorService getContractorService() {
+		
+		return contractorService;
 	}
 
 	

@@ -42,7 +42,12 @@
 								<input	type="submit" value="Войти как клиент"  />
 							</form>
 							
-	
+						<form action="Controller" method="get">
+								<input type="hidden" name="command" value="SHOWLOGINFORMCONTRACTOR" /> 
+								
+								<input	type="submit" value="Войти как сотрудник"  />
+							</form>
+							
 				
 			<br />
 			
