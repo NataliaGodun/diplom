@@ -21,41 +21,51 @@ public class AutorizationContractor implements Command {
 	private static final String PASSWORD = "password";
 	private static final String CONTRACTOR = "contractor";
 	private static final String MAIN_JSP = "WEB-INF/jsp/main.jsp";
+	private static final String MAIN_CONTRACTOR_JSP = "WEB-INF/jsp/mainContractor.jsp";
 	private static final String ROLE = "role";
 	private static final String NAME_CONTRACTOR = "firstName";
 	private static final String ID = "id";
+	private static final String DEPARTMENT = "department";
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-			System.out.println("1");
+		
 			Contractor contractor = null;
 			String login = request.getParameter(LOGIN);
 			String password = request.getParameter(PASSWORD);
 
 			ServiceFactory factory = ServiceFactory.getInstance();
 			ContractorService contractorService = factory.getContractorService();
-			System.out.println("2");
+			
 
 			try {
 				contractor = contractorService.authorization(login, password);
-				System.out.println("3");
+				
 				if (contractor != null) {
 					String role = contractor.getRole();
 					String firstName = contractor.getFirstName();
+					String department = contractor.getDepartment();
 					int id = contractor.getId();
+					
 					HttpSession session = request.getSession(true);
 					session.setAttribute(NAME_CONTRACTOR, firstName);
 					session.setAttribute(ID, id);
+					session.setAttribute(DEPARTMENT, department);
 					
 					request.setAttribute(CONTRACTOR, contractor);
-					System.out.println("4");
-					RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_JSP);
-
-					dispatcher.forward(request, response);
+					if (role.equals("admin")) {
+						RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_JSP);
+						dispatcher.forward(request, response);
 					System.out.println("5");
+					}else {
+						RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CONTRACTOR_JSP);
+						dispatcher.forward(request, response);
+						System.out.println("6");
+					}
 
 				} else {
-					System.out.println("6");
+					System.out.println("7");
 				//	response.sendRedirect(URL_VIEW_ALL_BOOK_WITH_INFO);
 				}
 			} catch (ServiceException e) {

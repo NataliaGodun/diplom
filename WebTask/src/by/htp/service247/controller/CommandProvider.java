@@ -12,15 +12,13 @@ import by.htp.service247.command.impl.EditDemand;
 import by.htp.service247.command.impl.EditDemandForm;
 import by.htp.service247.command.impl.Exit;
 import by.htp.service247.command.impl.GetImage;
-
 import by.htp.service247.command.impl.SelectDepartmentForm;
 import by.htp.service247.command.impl.ShowAddDemandForm;
 import by.htp.service247.command.impl.ShowAllDemands;
+import by.htp.service247.command.impl.ShowAllDemandsDepartment;
 import by.htp.service247.command.impl.ShowCommercialPage;
-import by.htp.service247.command.impl.ShowEditProfileForm;
 import by.htp.service247.command.impl.ShowLoginFormClient;
 import by.htp.service247.command.impl.ShowLoginFormContractor;
-import by.htp.service247.command.impl.ShowRegistrationForm;
 import by.htp.service247.command.impl.VentilaciaDemandForm;
 import by.htp.service247.command.impl.ViewDemand;
 import by.htp.service247.command.impl.ViewPageServices;
@@ -46,6 +44,7 @@ public class CommandProvider {
 		commands.put(CommandName.VENTILACIADEMAND, new VentilaciaDemandForm());
 		commands.put(CommandName.ADDVENTILACIADEMAND, new AddVentilaciaDemand());
 		commands.put(CommandName.SHOWALLDEMANS, new ShowAllDemands());
+		commands.put(CommandName.SHOWALLDEMANDSDEPARTMENT, new ShowAllDemandsDepartment());
 		commands.put(CommandName.DELETEDEMAND, new DeleteDemand());
 		commands.put(CommandName.EDITDEMAND, new EditDemand());
 		commands.put(CommandName.EDITDEMANDFORM, new EditDemandForm());
@@ -54,10 +53,7 @@ public class CommandProvider {
 		
 		commands.put(CommandName.EXIT, new Exit());
 	
-		commands.put(CommandName.SHOWEDITPROFILEFORM, new ShowEditProfileForm());
-		
-		commands.put(CommandName.SHOWREGISTRATIONFORM, new ShowRegistrationForm());
-		
+	
 
 	}
 
