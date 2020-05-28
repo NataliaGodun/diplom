@@ -37,7 +37,7 @@ public class AutorizationContractor implements Command {
 
 			ServiceFactory factory = ServiceFactory.getInstance();
 			ContractorService contractorService = factory.getContractorService();
-			
+			  
 
 			try {
 				contractor = contractorService.authorization(login, password);
