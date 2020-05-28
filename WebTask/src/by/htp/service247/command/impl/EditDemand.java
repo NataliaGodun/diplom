@@ -26,6 +26,7 @@ public class EditDemand implements Command {
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
 	private static final String ID_CLIENTA = "id_client";
 	private static final String PHOTO = "photo";
+	
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

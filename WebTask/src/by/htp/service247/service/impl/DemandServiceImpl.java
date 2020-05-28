@@ -97,6 +97,18 @@ public class DemandServiceImpl implements DemandService {
 			throw new ServiceException(e);
 		}
 	}
+
+	@Override
+	public Demand editDemand(int id,int id_contractor, String status) throws ServiceException {
+		DAOFactory daoObjectFactory = DAOFactory.getInstance();
+		DemandDAO demandDAO = daoObjectFactory.getDemandDAO();
+		try {
+			return demandDAO.editDemand(id,id_contractor,status);
+		} catch (DAOException e) {
+			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_LAYER_DAO, e);
+			throw new ServiceException(e);
+		}
+	}
 	
 
 }

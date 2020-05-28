@@ -13,6 +13,7 @@ public class Demand {
 	private String time;
 	private String address;
 	
+	
 	public Demand() {
 	
 	}

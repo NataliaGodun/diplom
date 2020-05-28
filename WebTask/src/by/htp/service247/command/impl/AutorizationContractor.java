@@ -24,8 +24,9 @@ public class AutorizationContractor implements Command {
 	private static final String MAIN_CONTRACTOR_JSP = "WEB-INF/jsp/mainContractor.jsp";
 	private static final String ROLE = "role";
 	private static final String NAME_CONTRACTOR = "firstName";
-	private static final String ID = "id";
+	
 	private static final String DEPARTMENT = "department";
+	private static final String ID_CONTRACTOR = "id_contractor";
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,11 +47,11 @@ public class AutorizationContractor implements Command {
 					String role = contractor.getRole();
 					String firstName = contractor.getFirstName();
 					String department = contractor.getDepartment();
-					int id = contractor.getId();
+					int id_contractor = contractor.getId();
 					
 					HttpSession session = request.getSession(true);
 					session.setAttribute(NAME_CONTRACTOR, firstName);
-					session.setAttribute(ID, id);
+					session.setAttribute(ID_CONTRACTOR, id_contractor);
 					session.setAttribute(DEPARTMENT, department);
 					
 					request.setAttribute(CONTRACTOR, contractor);

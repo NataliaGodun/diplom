@@ -16,5 +16,6 @@ public interface DemandService {
 
 	Demand editDemand(Demand demand)throws ServiceException;
 	Demand viewDemand(int id) throws ServiceException;
+	Demand editDemand(int id, int id_contractor, String status)throws ServiceException;
 
 }

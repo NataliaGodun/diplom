@@ -30,17 +30,12 @@
 					src="${pageContext.request. contextPath}/resources/images/image2.png"
 					width="100%" />
 	
-			
-		<c:if test="${not empty  requestScope.messageInfo }">
-			<br />
-			Ваша заявка успешно удалена!
-			<br />
-		</c:if>
+		
 <div id="inline">
 			<div id="content">
   				 <div id="center">
-  				 по отделу
-		<strong>Перечень заявок:</strong><br />
+  				 
+		<strong>Перечень заявок по отделу:</strong><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">
 							
@@ -54,9 +49,9 @@
 							<c:out value=" ${List.time}" />
 							<br />
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="VIEWDEMAND" /> 
+								<input type="hidden" name="command" value="CHANGESTATUS" /> 
 								<input type="hidden" name="id" value="${List.id}" /> 
-								<input	type="submit" value="Просмотреть заявку"  />
+								<input	type="submit" value="Изменить статус заявки"  />
 							</form>
 						
 					<br />
