@@ -2,6 +2,7 @@ package by.htp.service247.command.impl;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,9 @@ import by.htp.service247.service.exception.ServiceException;
 import by.htp.service247.service.factory.ServiceFactory;
 
 public class TakeKP implements Command {
-	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
+	private static final String PAGE_SERVICES_JSP = "WEB-INF/jsp/pageServices.jsp";
+	private static final String SEND_KP = "sendKP";
+	private static final String GET_KP = "Коммерческое предложение составлено и отправлено Вам на email.";
 	private static final String EMAIL = "email";
 	private static final String ADDRESS = "address";
 	private static final String PHONE = "phone";
@@ -78,7 +81,9 @@ public class TakeKP implements Command {
 		String text="Компания \"Service247\" готова оказать услуги по опрессовке системы отопления Вашего объекта. Стоимость проведения работ согласно технического задания, предоставленного заказчиком, составляет "+proposition.getPrice()+ " бел.рублей. Для заключения договора свяжитесь с нашим специалистом по номеру +375(29)336-25-26. Рабочее время офиса: пн-пт, 8:30-17:30";
 		sslSender.send("Коммерческое предложение", text, "s-247@mail.ru", toEmail);
 		    
-		
+		request.setAttribute(SEND_KP, GET_KP );
+		RequestDispatcher dispatcher = request.getRequestDispatcher(PAGE_SERVICES_JSP);
+		dispatcher.forward(request, response);
 	}
 
 }

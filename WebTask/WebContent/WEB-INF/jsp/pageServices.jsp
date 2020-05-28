@@ -32,7 +32,12 @@
 		<br /> <br />
 			
 		
-
+<c:if test="${not empty  requestScope.sendKP }">
+			<br />
+			<c:out value="${  requestScope.sendKP }" />
+			<br />
+		</c:if>
+		
 							
 						
 		

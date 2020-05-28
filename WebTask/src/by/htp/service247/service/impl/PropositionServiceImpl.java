@@ -21,11 +21,11 @@ public class PropositionServiceImpl implements PropositionService {
 			double x=0.1;
 			price=(int) (area*x);
 			System.out.println("price="+price);
-		}else if(data=="rr") {
+		}else if(data.equals("rr")) {
 			int rr=proposition.getReber_radiatorov();
 			double y=0.3;
 			price=(int) (rr*y);
-		}else if(data=="dl") {
+		}else if(data.equals("dl")) {
 			int trub10=proposition.getTrub10();
 			int trub25=proposition.getTrub25();
 			double k10=0.15;
