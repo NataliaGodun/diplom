@@ -48,20 +48,9 @@
 
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="SHOWALLDEMANDSDEPARTMENT" /> <br />
-				<input type="submit" value="Просмотреть заявки отдела" /> />
+				<input type="submit" value="Просмотреть заявки отдела"  />
 			</form>
 
-			<c:if test="${not empty requestScope.errorMessage }">
-				<br />
-				<c:out value="${requestScope.errorMessage }" />
-			</c:if>
-
-			<br />
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="showEditProfileForm" />
-				<br /> <input type="submit"
-					value=<fmt:message key="label.editProfile" /> />
-			</form>
 			
 			<br />
 			<form action="Controller" method="get">

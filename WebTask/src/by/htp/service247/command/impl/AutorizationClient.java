@@ -39,7 +39,7 @@ public class AutorizationClient implements Command {
         System.out.println(login+password);
 		ServiceFactory factory = ServiceFactory.getInstance();
 		ClientService clientService = factory.getClientService();
-		  System.out.println("2");
+		
 		try {
 			client = clientService.authorization(login, password);
 			if (client != null) {

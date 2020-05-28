@@ -21,6 +21,7 @@ import by.htp.service247.command.impl.ShowAllDemandsDepartment;
 import by.htp.service247.command.impl.ShowCommercialPage;
 import by.htp.service247.command.impl.ShowLoginFormClient;
 import by.htp.service247.command.impl.ShowLoginFormContractor;
+import by.htp.service247.command.impl.TakeKP;
 import by.htp.service247.command.impl.VentilaciaDemandForm;
 import by.htp.service247.command.impl.ViewDemand;
 import by.htp.service247.command.impl.ViewPageServices;
@@ -54,7 +55,7 @@ public class CommandProvider {
 		commands.put(CommandName.GETIMAGE, new GetImage());
 		commands.put(CommandName.CHANGESTATUS, new ChangeStatus());
 		commands.put(CommandName.EDITSTATUS, new EditStatus());
-		
+		commands.put(CommandName.TAKEKP, new TakeKP());
 		commands.put(CommandName.EXIT, new Exit());
 	
 	

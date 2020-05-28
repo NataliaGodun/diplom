@@ -23,36 +23,43 @@
 				+375 29 336-25-26<br />
 				+375 29 336-25-26
 				</h1>
+				
 	</div>
 </div>
 	
-		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
-					width="100%" />
-	
+		<form action="Controller" method="get">
+				<input type="hidden" name="command" value="exit" /> <br /> <input
+					type="submit" value="Выход" />
+			</form>
 		
 <div id="inline">
 			<div id="content">
   				 <div id="center">
   				 
-		<strong>Перечень заявок по отделу:</strong><br />
+		<strong>Перечень заявок по отделу "<c:out value="${requestScope.department}" />" :</strong><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">
 							
 						</div>
-
-							<br /> <strong>Отдел:</strong>
-							<c:out value=" ${List.department}" />		
+	
 							<br /><strong>Описание:</strong>
 							<c:out value=" ${List.describtion}" />		
 							<br /> <strong>Дата и время:</strong>
 							<c:out value=" ${List.time}" />
+							<br /> <strong>Cтатус:</strong>
+							<c:out value=" ${List.status_demand}" />
 							<br />
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="CHANGESTATUS" /> 
 								<input type="hidden" name="id" value="${List.id}" /> 
 								<input	type="submit" value="Изменить статус заявки"  />
+							</form>			<br />
+							<form action="Controller" method="get">
+								<input type="hidden" name="command" value="CREATEACT" /> 
+								<input type="hidden" name="id" value="${demand.id }" /> 
+								<input	type="submit" value="Создать акт"  />
 							</form>
+							
 						
 					<br />
 				</c:forEach>
@@ -61,10 +68,7 @@
 		</div>
 		</div>	
 			<br />
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="exit" /> <br /> <input
-					type="submit" value="Выход" />
-			</form>
+			
 		</div>
 
 		

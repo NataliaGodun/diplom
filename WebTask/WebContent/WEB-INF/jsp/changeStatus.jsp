@@ -27,19 +27,12 @@
 			</div>
 
 		</div>
-	
-		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
-					width="100%" />
-		<br /> <br />
-		
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="EDITSTATUS" /> 
-				<input type="hidden" name="id" value="${demand.id }" /> 
-				<input type="hidden" name="id_client" value="${demand.id_client }" /> 
-				<input type="hidden" name="photo" value="${demand.photo }" /> 	
-				<input type="hidden" name="department" value="${demand.department}" /> 						
-				 <strong>Идентификационный номер заявки: </strong>
+		<c:if test="${not empty  demand.photo}">
+								<img
+									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${demand.photo}"
+									width="40%" />
+							</c:if><br />
+							<strong>Идентификационный номер заявки: </strong>
 				<c:out value="${demand.id }" /><br />
 				<strong>Отдел: </strong>
 				<c:out value="${demand.department }" /><br />
@@ -47,8 +40,17 @@
 				<c:out value="${demand.describtion }" /><br />
 				<strong>Адрес: </strong>
 				<c:out value="${demand.address }" /><br />
-				<strong>Внесите изменения: </strong>
-				Измените статус!
+				<strong>Дата и время:</strong>
+				<c:out value=" ${demand.time}" /><br />
+				<strong>Статус заявки: </strong>
+				<c:out value="${demand.status_demand }" /><br />
+				<strong>Измените статус: </strong>	
+			<form action="Controller" method="get">
+				<input type="hidden" name="command" value="EDITSTATUS" /> 
+				<input type="hidden" name="id" value="${demand.id }" /> 
+				<input type="hidden" name="id_client" value="${demand.id_client }" /> 
+				<input type="hidden" name="photo" value="${demand.photo }" /> 	
+				<input type="hidden" name="department" value="${demand.department}" /> 						
 				<p><select size="5" multiple name="status_demand">
     <option value="Новая заявка">Новая заявка</option>
     <option value="Назначен исполнитель">Назначен исполнитель</option>
@@ -61,7 +63,7 @@
 				<input type="submit" value="Готово!" />
 			</form>
 	
-				
+			
 
 			
 			<br />

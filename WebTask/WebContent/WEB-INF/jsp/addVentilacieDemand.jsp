@@ -40,7 +40,9 @@
 			<form action="ImageController" method="post"
 				enctype="multipart/form-data">
 					<input type="hidden" name="department" value="${requestScope.department }" /> 
-				Описание:<input type="text" name="describtion" value="" /><br /> 
+					<p>Описание:<Br>
+   <textarea name="describtion" cols="40" rows="3"></textarea></p>	
+				
 				Адрес:<input type="text" name="address" value="" /><br /> 
 			    Файл:     <input type="file" name="file" id="file" /> <br />
 			     <input

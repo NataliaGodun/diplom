@@ -40,7 +40,7 @@ public class ShowAllDemandsDepartment implements Command {
 
 			} else {
 				
-
+				request.setAttribute(DEPARTMENT, department);
 				request.setAttribute(LIST, List);
 
 			}

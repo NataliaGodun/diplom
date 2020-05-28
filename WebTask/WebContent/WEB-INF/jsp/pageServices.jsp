@@ -48,6 +48,10 @@
 								<input	type="submit" value="Войти как сотрудник"  />
 							</form>
 							
+							<form action="Controller" method="get">
+								<input type="hidden" name="command" value="SHOWCOMMERCIALPAGE" /> 							
+								<input	type="submit" value="Получить коммерческое предложение"  />
+							</form>
 				
 			<br />
 			

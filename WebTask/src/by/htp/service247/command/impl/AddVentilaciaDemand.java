@@ -55,8 +55,8 @@ public class AddVentilaciaDemand implements Command {
 		
 		int id_client=(int) session.getAttribute(ID_CLIENTA);
 		
-		Date dateNow = new Date();
-	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd 'â' hh:mm:ss");
+		Date dateNow = new Date();	  
+	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy 'â' hh:mm:ss");
 	    final String time = formatForDateNow.format(dateNow);
 		
 		final int contractor = 0;	
@@ -101,7 +101,7 @@ public class AddVentilaciaDemand implements Command {
 			DemandService demandService = factory.getDemandService();
 
 			Demand demand = new Demand(0, contractor, id_client, status, department, describtion, pathImage, time,address);
-			 System.out.println(demand.getDescribtion());
+			
 			demand  = demandService.addDemand(demand);
 
 			//int i = demand.getId();

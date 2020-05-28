@@ -3,10 +3,11 @@ package by.htp.service247.dao.factory;
 import by.htp.service247.dao.ClientDAO;
 import by.htp.service247.dao.ContractorDAO;
 import by.htp.service247.dao.DemandDAO;
-
+import by.htp.service247.dao.PropositionDAO;
 import by.htp.service247.dao.impl.SQLClientDAO;
 import by.htp.service247.dao.impl.SQLContractorDAO;
 import by.htp.service247.dao.impl.SQLDemandDAO;
+import by.htp.service247.dao.impl.SQLPropositionDAO;
 
 /**
  * @author Godun Natalia
@@ -20,6 +21,7 @@ public final class DAOFactory {
 	private final DemandDAO sqlDemandImpl = new SQLDemandDAO();
 	private final ClientDAO sqlClientImpl = new SQLClientDAO();
 	private final ContractorDAO sqlContractorImpl = new SQLContractorDAO();
+	private final PropositionDAO sqlPropositionImpl = new SQLPropositionDAO();
 
 
 	private DAOFactory() {
@@ -38,6 +40,11 @@ public final class DAOFactory {
 	}
 	public ContractorDAO getContractorDAO() {
 		return sqlContractorImpl;
+	}
+
+	public PropositionDAO getPropositionDAO() {
+		
+		return sqlPropositionImpl;
 	}
 
 	
