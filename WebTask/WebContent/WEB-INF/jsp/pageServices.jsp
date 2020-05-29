@@ -8,26 +8,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s2.css" />" />
 </head>
 <body>
 
 	<div id="main">
 
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />		
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-	</div>
-</div>
-	
 		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
 		<br /> <br />
 			

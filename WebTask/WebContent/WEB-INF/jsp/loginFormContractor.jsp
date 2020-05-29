@@ -7,35 +7,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s2.css" />" />
 <title>Registration</title>
 </head>
 <body>
+<body>
 
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />
-				
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-				
-
-				
-			</div>
-
-		</div>
-	
-		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
+	<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
+	<div id="fon">
+		<br />
+	<div id="centerAvtorization1">
 		
-       <div id="loginForm">
+	<div id="centerAvtorization2">
+<strong>Авторизация сотрудника</strong>	<br /><br />
 			<form action="Controller" method="post">
 				<input type="hidden" name="command" value="AUTHORIZATIONCONTRACTOR" />			
 				Логин:
@@ -44,10 +30,11 @@
 				<br /> <input type="password" name="password" value="" /><br /> <br />
 				<input type="submit" value="Войти" />
 			</form>
+	
+			</div>	
 		</div>
-		
-		
+	<br />	<br />	<br />
+</div>
 
-	</div>
 </body>
 </html>

@@ -8,36 +8,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s2.css" />" />
 </head>
 <body>
-
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />
-				
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-		
-			</div>
-		</div>
-		<br /><br />
-		Рассчитайте стоимость опрессовки систем отопления для своего объекта в онлайн-режиме.<br />
-		Заполните обязательные поля и через минуту получите коммерческое предложение на e-mail.
-		
-		<br /><br />
+	<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
+					width="100%" />
+	<div id="fon">
+		<br />
+		<div id="center"><div id="center4">
+		Рассчитайте стоимость опрессовки систем отопления для своего объекта в онлайн-режиме.
+		Заполните обязательные поля и через минуту получите коммерческое предложение на e-mail.<br /></div>
+		<div id="center2">
+		<div id="center3">
 	<form action="Controller" method="get">
-				<input type="hidden" name="command" value="TAKEKP" /> 			
-				Email: <input type="text" name="email" value="" /><br />	
-				Адрес: <input type="text" name="address" value="" /><br />	
-				Телефон: <input type="text" name="phone" value="" /><br />	
-				Имя: <input type="text" name="name_user" value="" /><br />	
+				<input type="hidden" name="command" value="TAKEKP" /> 
+				Имя:     <input type="text" name="name_user" value="" /><br />				
+				Email:   <input type="text" name="email" value="" /><br />	
+				Адрес:   <input type="text" name="address" value="" /><br />			
+				Телефон: <input type="text" name="phone" value="" /><br />				
 				Выберите город:<br>
 <input id="rb1" type="radio" name="city" value="Минск" onChange="hide()" checked >Минск
 <input id="rb2" type="radio" name="city" value="Другой населенный пункт" onChange="show()">Другой населенный пункт
@@ -45,11 +34,11 @@
     <div id="infoKm" style="display:none">
        Введите расстояние от Минска в (км.): <input type="text" name="km" value="" /><br />	</div>
 <br>
-			
+		
 	<strong>Выберите, какие данные Вам удобно предоставить?<br /><br></strong>
-<input id="myRadioButton1" type="radio" name="data" value="s" onChange="show1()" >Площадь помещений
-<input id="myRadioButton2" type="radio" name="data" value="dl" onChange="show2()">Длины сечения труб
-<input id="myRadioButton3" type="radio" name="data" value="rr" onChange="show3()">Количество ребер радиаторов
+<input id="myRadioButton1" type="radio" name="data" value="s" onChange="show1()" >Площадь помещений<br />	
+<input id="myRadioButton2" type="radio" name="data" value="dl" onChange="show2()">Длина и сечение труб<br />	
+<input id="myRadioButton3" type="radio" name="data" value="rr" onChange="show3()">Количество ребер радиаторов<br />	
 
 <br>
     <div id="info1" style="display:none">
@@ -60,11 +49,12 @@
      	Диаметр труб от 25 до 100 мм : <input type="text" name="trub25" value="" /><br />	</div>
      	 <div id="info3" style="display:none">
      	Введите количество ребер радиаторов : <input type="text" name="reber_radiatorov" value="" /><br />	</div>
-				
+					
 				<br>
 				<input type="submit" value="Получить коммерческое предложение!" />
-			</form>
-		
+			</form></div>
+				</div>
+			</div><br />
 		</div>	
 	
 
