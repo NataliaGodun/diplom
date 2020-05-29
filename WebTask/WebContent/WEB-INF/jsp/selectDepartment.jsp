@@ -8,43 +8,23 @@ pageEncoding="utf-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s2.css" />" />
 </head>
 <body>
-
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />
-				
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-				
-
-				
-			</div>
-
-		</div>
-	
-		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
+<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
-		<br /> <br />
-		<div id="welcome">
-			<h1>
-				Добро пожаловать
-				,
-				<c:out value="${sessionScope.firstName}" />
-				!
-			</h1>
-
-		</div>
-
+		
+		<div id="fon">
+			<div id="kabinet"> 	
+			<form action="Controller" method="get">
+				<input type="hidden" name="command" value="exit" /> <br /> <input
+					type="submit" value="Выход" />
+					
+			</form></div>
+			
+			<div id="centerLKklient">
+			 <strong> <c:out value="${sessionScope.firstName}" />, согласно заключенного договора вы можете подать заявку на следующие отделы:</strong>
 
 			<form action="Controller" method="get">
 			<input type="hidden" name="department" value="Вентиляция и кондиционирование" /> <br />
@@ -54,23 +34,20 @@ pageEncoding="utf-8"%>
 			<form action="Controller" method="get">
 			<input type="hidden" name="department" value="Водоснабжение и канализация" /> <br />
 				<input type="hidden" name="command" value="VENTILACIADEMAND" /> <br />
-				<input type="submit" value="Водоснабжение и канализация" />
+				<input type="submit" value="   Водоснабжение и канализация   " />
 			</form>
 			<form action="Controller" method="get">
 			<input type="hidden" name="department" value="Электроснабжение" /> <br />
 				<input type="hidden" name="command" value="VENTILACIADEMAND" /> <br />
-				<input type="submit" value="Электроснабжение" />
+				<input type="submit" value="            Электроснабжение             " />
 			</form>
 
 			
 			<br />
 			
 			<br />
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="exit" /> <br /> <input
-					type="submit" value="Выход" />
-			</form>
-		</div>
+			
+		</div></div>
 
 		
 
