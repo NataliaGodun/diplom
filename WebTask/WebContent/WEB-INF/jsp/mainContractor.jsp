@@ -27,7 +27,7 @@
 				Добро пожаловать,  <c:out value="${sessionScope.firstName}" />! </strong>
 		<form action="Controller" method="get">
 				<input type="hidden" name="command" value="SHOWALLDEMANDSDEPARTMENT" /> <br />
-				<input type="submit" value="  Зарегистрировать клиента  "  />
+				<input type="submit" value="   Зарегистрировать клиента   "  />
 			</form>
 
 			<form action="Controller" method="get">

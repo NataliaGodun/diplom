@@ -43,8 +43,8 @@ public class RegContractor implements Command {
 			String passport = request.getParameter(PASSPORT);
 			String login = request.getParameter(LOGIN );
 			String password = request.getParameter(PASSWORD);
-			String status = request.getParameter(STATUS);
-			String role = request.getParameter(ROLE);
+			String status = STATUS;
+			String role = ROLE;
 			String department = request.getParameter(DEPARTMENT);
 			Contractor contractor=new Contractor(id,firstName, lastName, phone, dateOfBirth,passport,login,password,status,role,department);
 			 System.out.println("Reg impl2");

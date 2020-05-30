@@ -23,7 +23,8 @@
 					type="submit" value="Выход" />
 			</form></div>
 			<div id="centerLKklient">
-			
+			<div id="addContr">
+<div id="addContr2">
 
 		<form action="Controller" method="get">
 				<input type="hidden" name="command" value="REGCONTRACTOR" /> <br />
@@ -33,8 +34,13 @@
 				Дата рождения: <br />  <input type="text" name="dateOfBirth" value="" /><br />			
 				Паспорт: <br /><input type="text" name="passport" value="" /><br />	
 				Логин:  <br />   <input type="text" name="login" value="" /><br />				
-				Пароль: <br />  <input type="password" name="password" value="" /><br />		
-				Отдел: <br /><input type="text" name="department" value="" /><br />	<br />	
+				Пароль: <br />  <input type="password" name="password" value="" /><br />	
+				Отдел: <br /><select  name="department">
+    <option value="Вентиляция и кондиционирование">Вентиляция и кондиционирование</option>
+    <option value="Водоснабжение и канализация">Водоснабжение и канализация</option>
+    <option value="Электроснабжение">Электроснабжение</option>
+   </select>
+			<br />	<br /><br />
 				<input type="submit" value="Зарегистрировать сотрудника"  />
 			</form>
 
@@ -42,7 +48,7 @@
 			
 			<br />
 			
-		</div>
+		</div></div></div>
 
 		
 	</div>
