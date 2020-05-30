@@ -8,29 +8,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s3.css" />" />
 </head>
 <body>
-
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-				
-			</div>
-
-		</div>
+<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
+					width="100%" />
+		
+		<div id="fon">
+		<div id="profil"> 
+			<div id="profil1"> 
+		 <strong>	Сотрудник, <c:out value="${sessionScope.firstName}" /></strong>
+			<form action="Controller" method="get">
+				<input type="hidden" name="command" value="exit" /> <br /> <input
+					type="submit" value="Выход" />
+					
+			</form></div></div>
+				<div id="centerViewDemand"> 
 		<c:if test="${not empty  demand.photo}">
 								<img
 									src="${pageContext.request. contextPath}/ImageController?command=GetImage&index=${demand.photo}"
-									width="40%" />
+									width="85%" />
 							</c:if><br />
 							<strong>Идентификационный номер заявки: </strong>
 				<c:out value="${demand.id }" /><br />
@@ -51,28 +49,20 @@
 				<input type="hidden" name="id_client" value="${demand.id_client }" /> 
 				<input type="hidden" name="photo" value="${demand.photo }" /> 	
 				<input type="hidden" name="department" value="${demand.department}" /> 						
-				<p><select size="5" multiple name="status_demand">
+				<p><select  name="status_demand">
     <option value="Новая заявка">Новая заявка</option>
     <option value="Назначен исполнитель">Назначен исполнитель</option>
     <option value="В работе">В работе</option>
     <option value="Выполнено">Выполнено</option>
     <option value="Отложено">Отложено</option>
    </select></p>
+				<br />
 				
-				
-				<input type="submit" value="Готово!" />
+				<input type="submit" value="    Сохранить статус     " />
 			</form>
-	
-			
-
-			
+		
 			<br />
-			
-			<br />
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="exit" /> <br /> <input
-					type="submit" value="Выход" />
-			</form>
+	</div>
 		</div>
 
 		

@@ -8,40 +8,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s3.css" />" />
 </head>
 <body>
 
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />		
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-				
-	</div>
-</div>
-	
-		<form action="Controller" method="get">
+	<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
+					width="100%" />
+		
+			<div id="fon">
+		<div id="profil"> 
+			<div id="profil1"> 
+		 <strong>	Сотрудник, <c:out value="${sessionScope.firstName}" /></strong>
+			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="exit" /> <br /> <input
 					type="submit" value="Выход" />
-			</form>
-		
-<div id="inline">
-			<div id="content">
-  				 <div id="center">
+					
+			</form></div></div>
+			<div id="centerLKklient">
   				 
-		<strong>Перечень заявок по отделу "<c:out value="${requestScope.department}" />" :</strong><br />
+		<strong>Перечень заявок по отделу <br />"<c:out value="${requestScope.department}" />" :</strong><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">
 							
 						</div>
-	
+							<br /> <strong>Идентификационный номер заявки: </strong>
+							<c:out value=" ${List.id}" />		
 							<br /><strong>Описание:</strong>
 							<c:out value=" ${List.describtion}" />		
 							<br /> <strong>Дата и время:</strong>
@@ -57,7 +49,7 @@
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="CREATEACT" /> 
 								<input type="hidden" name="id" value="${demand.id }" /> 
-								<input	type="submit" value="Создать акт"  />
+								<input	type="submit" value="         Создать акт           "  />
 							</form>
 							
 						
@@ -65,13 +57,8 @@
 				</c:forEach>
 			<br />
 </div>
-		</div>
-		</div>	
-			<br />
-			
-		</div>
-
 		
+	</div>	
 
 </body>
 </html>

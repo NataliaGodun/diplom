@@ -14,6 +14,7 @@ import by.htp.service247.command.impl.EditDemandForm;
 import by.htp.service247.command.impl.EditStatus;
 import by.htp.service247.command.impl.Exit;
 import by.htp.service247.command.impl.GetImage;
+import by.htp.service247.command.impl.RegContractor;
 import by.htp.service247.command.impl.SelectDepartmentForm;
 import by.htp.service247.command.impl.ShowAddDemandForm;
 import by.htp.service247.command.impl.ShowAllDemands;
@@ -21,6 +22,7 @@ import by.htp.service247.command.impl.ShowAllDemandsDepartment;
 import by.htp.service247.command.impl.ShowCommercialPage;
 import by.htp.service247.command.impl.ShowLoginFormClient;
 import by.htp.service247.command.impl.ShowLoginFormContractor;
+import by.htp.service247.command.impl.ShowRegFormContractor;
 import by.htp.service247.command.impl.TakeKP;
 import by.htp.service247.command.impl.VentilaciaDemand;
 import by.htp.service247.command.impl.ViewDemand;
@@ -56,6 +58,8 @@ public class CommandProvider {
 		commands.put(CommandName.CHANGESTATUS, new ChangeStatus());
 		commands.put(CommandName.EDITSTATUS, new EditStatus());
 		commands.put(CommandName.TAKEKP, new TakeKP());
+		commands.put(CommandName.SHOWREGFORMCONTRACTOR, new ShowRegFormContractor());
+		commands.put(CommandName.REGCONTRACTOR, new RegContractor());
 		commands.put(CommandName.EXIT, new Exit());
 	
 	

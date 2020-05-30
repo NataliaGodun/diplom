@@ -24,7 +24,7 @@ public class AutorizationContractor implements Command {
 	private static final String MAIN_CONTRACTOR_JSP = "WEB-INF/jsp/mainContractor.jsp";
 	private static final String ROLE = "role";
 	private static final String NAME_CONTRACTOR = "firstName";
-	
+	private static final String URL_VIEW_ALL_DEMAND_DEPARTMENT = " http://localhost:8080/WebTask/Controller?command=ShowAllDemandsDepartment";
 	private static final String DEPARTMENT = "department";
 	private static final String ID_CONTRACTOR = "id_contractor";
 	
@@ -56,13 +56,16 @@ public class AutorizationContractor implements Command {
 					
 					request.setAttribute(CONTRACTOR, contractor);
 					if (role.equals("admin")) {
-						RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_JSP);
-						dispatcher.forward(request, response);
-					System.out.println("5");
-					}else {
 						RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CONTRACTOR_JSP);
 						dispatcher.forward(request, response);
-						System.out.println("6");
+				
+					}else {
+						
+						
+						response.sendRedirect(URL_VIEW_ALL_DEMAND_DEPARTMENT);
+						//RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CONTRACTOR_JSP);
+						//dispatcher.forward(request, response);
+
 					}
 
 				} else {

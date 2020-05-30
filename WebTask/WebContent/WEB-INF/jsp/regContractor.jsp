@@ -23,17 +23,22 @@
 					type="submit" value="Выход" />
 			</form></div>
 			<div id="centerLKklient">
-			 <strong>
-				Добро пожаловать,  <c:out value="${sessionScope.firstName}" />! </strong>
-		<form action="Controller" method="get">
-				<input type="hidden" name="command" value="SHOWALLDEMANDSDEPARTMENT" /> <br />
-				<input type="submit" value="  Зарегистрировать клиента  "  />
-			</form>
+			
 
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="SHOWREGFORMCONTRACTOR" /> <br />
+		<form action="Controller" method="get">
+				<input type="hidden" name="command" value="REGCONTRACTOR" /> <br />
+				Имя: <br />    <input type="text" name="firstName" value="" /><br />				
+				Фамилия: <br />  <input type="text" name="lastName" value="" /><br />	
+				Телефон: <br />  <input type="text" name="phone" value="" /><br />	
+				Дата рождения: <br />  <input type="text" name="dateOfBirth" value="" /><br />			
+				Паспорт: <br /><input type="text" name="passport" value="" /><br />	
+				Логин:  <br />   <input type="text" name="login" value="" /><br />				
+				Пароль: <br />  <input type="password" name="password" value="" /><br />		
+				Отдел: <br /><input type="text" name="department" value="" /><br />	<br />	
 				<input type="submit" value="Зарегистрировать сотрудника"  />
 			</form>
+
+			
 			
 			<br />
 			
