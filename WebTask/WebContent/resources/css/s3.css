@@ -1,6 +1,5 @@
 html, body {
-		
-  
+
 	margin-left: 15px;
 	margin-right: 15px;
 	padding: 0px;
@@ -49,6 +48,7 @@ html, body {
 }
 #profil{
 float:right;
+padding: 15px;
 
 }
 #profil1{
@@ -57,11 +57,31 @@ margin-right: 40px;
 }
 #profil2{
 float:right;
-margin-left: 550px;
+
 }
 
 #centerLKklient{
-  	margin-left: 150px;
-	margin-right: 120px;
-	padding: 60px;
+	padding: 15px;
+  	margin-left: 190px;
+	margin-right: 340px;
+	
+}
+#addDemand{
+	padding: 25px;
+  	margin-left: 190px;
+	margin-right: 300px;
+	
+}
+
+#addDemand2{
+	padding: 25px;
+	background: #ffffff;/*белый*/
+  	margin-left: 45px;
+	
+}
+#centerViewDemand{
+	padding: 15px;
+  	margin-left: 230px;
+	margin-right: 300px;
+	
 }

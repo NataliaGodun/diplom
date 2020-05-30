@@ -33,7 +33,7 @@ public class EditDemand implements Command {
 		
 		
 		Date dateNow = new Date();
-	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd 'â' hh:mm:ss");
+	    SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy 'â' hh:mm:ss");
 	    final String time = formatForDateNow.format(dateNow);
 		
 		final int id_contractor = 0;

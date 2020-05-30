@@ -8,55 +8,42 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s3.css" />" />
 </head>
 <body>
-
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-				
-
-				
-			</div>
-
-		</div>
-	
-		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
+<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
-		<br /> <br />
-	
-
-
-			<form action="ImageController" method="post"
-				enctype="multipart/form-data">
-					<input type="hidden" name="department" value="${requestScope.department }" /> 
-					<p>Описание:<Br>
-   <textarea name="describtion" cols="40" rows="3"></textarea></p>	
-				
-				Адрес:<input type="text" name="address" value="" /><br /> 
-			    Файл:     <input type="file" name="file" id="file" /> <br />
-			     <input
-					type="submit" value="Загрузить" name="upload" id="upload" />
-			</form>
-			
-			<br />
-			
-			<br />
+		
+			<div id="fon">
+		<div id="profil"> 
+			<div id="profil1"> 
+		 <strong>	Клиент, <c:out value="${sessionScope.firstName}" /></strong>
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="exit" /> <br /> <input
 					type="submit" value="Выход" />
+					
+			</form></div></div>
+<div id="addDemand">
+<div id="addDemand2">
+			<form action="ImageController" method="post"
+				enctype="multipart/form-data">
+					<input type="hidden" name="department" value="${requestScope.department }" /> 
+					<p>Описание:<br /> 
+  					 <textarea name="describtion" cols="40" rows="5"></textarea></p>			
+					 Адрес:<br /> 
+					  <textarea name="address" cols="40" rows="2"></textarea><br /> <br /> 
+					 Прикрепить фотографию:<br />  
+					 <input type="file" name="file" id="file" /> <br /><br />
+			     <input
+					type="submit" value="      Зарегистрировать заявку       " name="upload" id="upload" />
 			</form>
+			
+			<br />
+			
 		</div>
+		
+		</div>	</div>
 
 		
 

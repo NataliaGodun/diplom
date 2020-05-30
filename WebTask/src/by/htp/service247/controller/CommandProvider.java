@@ -22,7 +22,7 @@ import by.htp.service247.command.impl.ShowCommercialPage;
 import by.htp.service247.command.impl.ShowLoginFormClient;
 import by.htp.service247.command.impl.ShowLoginFormContractor;
 import by.htp.service247.command.impl.TakeKP;
-import by.htp.service247.command.impl.VentilaciaDemandForm;
+import by.htp.service247.command.impl.VentilaciaDemand;
 import by.htp.service247.command.impl.ViewDemand;
 import by.htp.service247.command.impl.ViewPageServices;
 
@@ -44,7 +44,7 @@ public class CommandProvider {
 		commands.put(CommandName.SHOWCOMMERCIALPAGE, new ShowCommercialPage());
 		commands.put(CommandName.SHOWADDDEMANDFORM, new ShowAddDemandForm());
 		commands.put(CommandName.SELECTDEPARTMENTFORM, new SelectDepartmentForm());
-		commands.put(CommandName.VENTILACIADEMAND, new VentilaciaDemandForm());
+		commands.put(CommandName.VENTILACIADEMAND, new VentilaciaDemand());
 		commands.put(CommandName.ADDVENTILACIADEMAND, new AddVentilaciaDemand());
 		commands.put(CommandName.SHOWALLDEMANS, new ShowAllDemands());
 		commands.put(CommandName.SHOWALLDEMANDSDEPARTMENT, new ShowAllDemandsDepartment());

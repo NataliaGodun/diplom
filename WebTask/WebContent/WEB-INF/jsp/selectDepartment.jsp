@@ -8,7 +8,7 @@ pageEncoding="utf-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/s2.css" />" />
+	href="<c:url value="/resources/css/s3.css" />" />
 </head>
 <body>
 <img
@@ -16,15 +16,17 @@ pageEncoding="utf-8"%>
 					width="100%" />
 		
 		<div id="fon">
-			<div id="kabinet"> 	
+		<div id="profil"> 
+			<div id="profil1"> 
+		 <strong>	Клиент, <c:out value="${sessionScope.firstName}" /></strong>
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="exit" /> <br /> <input
 					type="submit" value="Выход" />
 					
-			</form></div>
+			</form></div></div>
 			
 			<div id="centerLKklient">
-			 <strong> <c:out value="${sessionScope.firstName}" />, согласно заключенного договора вы можете подать заявку на следующие отделы:</strong>
+			 <strong> Согласно заключенного договора вы можете подать заявку на следующие отделы:</strong>
 
 			<form action="Controller" method="get">
 			<input type="hidden" name="department" value="Вентиляция и кондиционирование" /> <br />

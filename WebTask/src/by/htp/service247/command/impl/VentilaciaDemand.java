@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import by.htp.service247.command.Command;
 
-public class VentilaciaDemandForm implements Command {
+public class VentilaciaDemand implements Command {
 	private static final String ADD_VENTILACIA_DEMAND_JSP = "WEB-INF/jsp/addVentilacieDemand.jsp";
 	private static final String DEPARTMENT =  "department";
 	@Override

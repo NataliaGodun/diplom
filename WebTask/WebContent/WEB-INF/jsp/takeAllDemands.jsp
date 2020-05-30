@@ -8,43 +8,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/styleNew.css" />" />
+	href="<c:url value="/resources/css/s3.css" />" />
 </head>
 <body>
 
-	<div id="main">
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="${pageContext.request. contextPath}/resources/images/logo-min.png"
-					width="40%" />		
-				<h1>
-				+375 29 336-25-26<br />
-				+375 29 336-25-26
-				</h1>
-	</div>
-</div>
-	
-		<img
-					src="${pageContext.request. contextPath}/resources/images/image2.png"
+	<img
+					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
+		
+		<div id="fon">
+		<div id="profil"> 
+			<div id="profil1"> 
+		 <strong>	Клиент, <c:out value="${sessionScope.firstName}" /></strong>
+			<form action="Controller" method="get">
+				<input type="hidden" name="command" value="exit" /> <br /> <input
+					type="submit" value="Выход" />
+					
+			</form></div></div>
 	
-			
+<div id="centerLKklient">
+		
 		<c:if test="${not empty  requestScope.messageInfo }">
 			<br />
 			Ваша заявка успешно удалена!
 			<br />
 		</c:if>
-<div id="inline">
-			<div id="content">
-  				 <div id="center">
-		<strong>Перечень заявок:</strong><br />
+			<br /><strong>Перечень заявок:</strong><br /><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">
 							
 						</div>
-
+ 							<strong>Идентификационный номер заявки: </strong>
+							<c:out value="${List.id }" />
 							<br /> <strong>Отдел:</strong>
 							<c:out value=" ${List.department}" />		
 							<br /><strong>Описание:</strong>
@@ -62,13 +57,9 @@
 				</c:forEach>
 			<br />
 </div>
-		</div>
-		</div>	
+			
 			<br />
-			<form action="Controller" method="get">
-				<input type="hidden" name="command" value="exit" /> <br /> <input
-					type="submit" value="Выход" />
-			</form>
+		
 		</div>
 
 		

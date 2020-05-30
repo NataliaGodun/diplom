@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome</title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/s2.css" />" />
+	href="<c:url value="/resources/css/s3.css" />" />
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 					width="100%" />
 		
 		<div id="fon">
-			<div id="kabinet"> 	 <strong>Личный кабинет клиента</strong></div>
+			<div id="profil"> 	 <strong>Личный кабинет клиента</strong></div>
 			<div id="centerLKklient">
 			 <strong>
 				Добро пожаловать,  <c:out value="${sessionScope.firstName}" />! </strong>
