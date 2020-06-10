@@ -29,10 +29,7 @@ public class AutorizationClient implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-	    //sslSender.send("This is Subject", "SSL: This is Natasha!", "nat_ush_ka@mail.ru", "natalia.godun1507@gmail.com");
-	   
+		   
 		Client client = null;
 		String login = request.getParameter(LOGIN);
 		String password = request.getParameter(PASSWORD);
@@ -50,7 +47,7 @@ public class AutorizationClient implements Command {
 
 				session.setAttribute(NAME_CLIENT, firstName);
 				session.setAttribute(ID, id);
-				//session.setAttribute(LOGIN, login);
+			
 				request.setAttribute(CLIENT, client);
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CLIENT_JSP);

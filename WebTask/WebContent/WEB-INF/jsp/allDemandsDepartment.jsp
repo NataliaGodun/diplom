@@ -48,7 +48,7 @@
 							</form>			<br />
 							<form action="Controller" method="get">
 								<input type="hidden" name="command" value="CREATEACT" /> 
-								<input type="hidden" name="id" value="${demand.id }" /> 
+								<input type="hidden" name="id" value="${List.id }" /> 
 								<input	type="submit" value="         Создать акт           "  />
 							</form>
 							

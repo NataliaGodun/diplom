@@ -39,8 +39,7 @@ public class SQLContractorDAO implements ContractorDAO {
 	private static final int ELEVENTH = 11;
 	@Override
 	public Contractor authorization(String login, String password) throws DAOException {
-		System.out.println(login);
-		System.out.println(password);
+		
 		Connection con = null;
 		ResultSet rs = null;
 		Contractor contractor = null;
@@ -69,7 +68,7 @@ public class SQLContractorDAO implements ContractorDAO {
 				 
 
 				 contractor= new Contractor(id,firstName, lastName, phone, dateOfBirth,passport,loginDB,passwordDB,status,role,department);
-				 System.out.println(contractor.getId());
+				
 			}
 
 		} catch (ConnectionPoolException e) {
@@ -91,7 +90,6 @@ public class SQLContractorDAO implements ContractorDAO {
 
 	@Override
 	public Contractor registration(Contractor contractor) throws DAOException {
-		 System.out.println("1 reg");
 		Connection con = null;
 		ResultSet rs = null;
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
@@ -102,14 +100,12 @@ public class SQLContractorDAO implements ContractorDAO {
 			PreparedStatement ps = con.prepareStatement(CONTRACTOR_SELECT_PASSPORT);
 			ps.setString(FIRST, contractor.getPassport());
 			rs = ps.executeQuery();
-			System.out.println("2 reg");
 			int i = 0;
 			while (rs.next()) {
 				i = rs.getInt("id");
 			}
 			if (i == 0) {
-				System.out.println("3 reg"+contractor.getFirstName());
-				System.out.println("4 reg"+contractor.getLastName());
+				
 				ps = con.prepareStatement(CONTRACTOR_ADD);
 
 				ps.setString(FIRST, contractor.getFirstName());
@@ -122,9 +118,9 @@ public class SQLContractorDAO implements ContractorDAO {
 				ps.setString(EIGTTH, contractor.getStatus());
 				ps.setString(NINETH, contractor.getRole());
 				ps.setString(TENTH, contractor.getDepartment());
-				System.out.println("5 reg");
+				
 				ps.executeUpdate();
-				System.out.println("6 reg");}
+				}
 			
 		} catch (ConnectionPoolException e) {
 			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_CONNECTION_POOL, e);
@@ -141,20 +137,6 @@ public class SQLContractorDAO implements ContractorDAO {
 		}
 		return contractor;
 	}
-
-
-	@Override
-	public ArrayList<Contractor> showContractor() throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deleteContractor(int id) throws DAOException {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 
 }

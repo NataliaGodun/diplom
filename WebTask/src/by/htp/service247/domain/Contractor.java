@@ -3,10 +3,6 @@ package by.htp.service247.domain;
 import java.io.Serializable;
 
 public class Contractor implements Serializable {
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = -5544827707949518716L;
 	private int id;
 	private String firstName;
 	private String lastName;

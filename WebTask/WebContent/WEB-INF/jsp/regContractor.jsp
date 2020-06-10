@@ -41,7 +41,7 @@
     <option value="Электроснабжение">Электроснабжение</option>
    </select>
 			<br />	<br /><br />
-				<input type="submit" value="Зарегистрировать сотрудника"  />
+				<input type="submit" value="Сохранить данные о сотруднике"  />
 			</form>
 
 			

@@ -41,17 +41,6 @@ public class ContractorServiceImpl implements ContractorService {
 		}
 	}
 
-	@Override
-	public ArrayList<Contractor> showContractor() throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deleteContractor(int id) throws ServiceException {
-		// TODO Auto-generated method stub
-		
-	}
 
 	
 }

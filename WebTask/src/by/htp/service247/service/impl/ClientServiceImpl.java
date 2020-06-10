@@ -39,19 +39,4 @@ public class ClientServiceImpl implements ClientService {
 		return null;
 	}
 
-	@Override
-	public ArrayList<Client> showClient() throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deleteClient(int id) throws ServiceException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	
-
 }

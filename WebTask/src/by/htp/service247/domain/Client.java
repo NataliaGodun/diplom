@@ -1,7 +1,7 @@
 package by.htp.service247.domain;
 
 public class Client {
-	//private static final long serialVersionVID=-8544827707949518716L;
+
 	private int id;
 	private String email;
 	private String firstName;
@@ -14,9 +14,6 @@ public class Client {
 	private String servSant;
 	private String servElectr;
 	private String servVent;
-
-	
-
 	
 	public Client() {
 
@@ -31,7 +28,6 @@ public class Client {
 		this.phone= phone;
 		this.address = address;
 		this.status = status;
-		//this.id_contract_customer = id_contract_customer;
 		this.login = login;
 		this.password = password;
 		this.servSant = servSant;

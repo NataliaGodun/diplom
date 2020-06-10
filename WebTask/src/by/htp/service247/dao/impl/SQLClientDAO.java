@@ -85,20 +85,4 @@ public class SQLClientDAO implements ClientDAO {
 		return null;
 	}
 
-	@Override
-	public ArrayList<Client> showClient() throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deleteClient(int id) throws DAOException {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
-	
-	
-
 }

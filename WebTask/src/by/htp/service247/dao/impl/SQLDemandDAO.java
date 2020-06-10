@@ -20,7 +20,7 @@ import by.htp.service247.domain.Demand;
 
 public class SQLDemandDAO implements DemandDAO {
 
-	private static final String SELECT_ALL_DEMAND_CLIENT = "SELECT * FROM DEMAND WHERE ID_CLIENT=?";
+  private static final String SELECT_ALL_DEMAND_CLIENT = "SELECT * FROM DEMAND WHERE ID_CLIENT=?";
 	private static final String SELECT_ALL_DEMAND_DEPARTMENT = "SELECT * FROM DEMAND WHERE DEPARTMENT=?";
 	private static final String TAKE_DEMAND_FROM_ID = "SELECT * FROM DEMAND WHERE ID=?";
 	private static final String ADD_DEMAND = "INSERT INTO DEMAND (id_contractor, id_client, status_demand, department, describtion,photo, time, address ) VALUES(?,?,?,?,?,?,?,?)";
@@ -201,13 +201,11 @@ public class SQLDemandDAO implements DemandDAO {
 			ps.setString(FOURTH, demand.getAddress());
 			ps.setInt(FIFTH, demand.getId());
 			ps.executeUpdate();
-			System.out.println("σορ δΰξ2" );
 			ps = con.prepareStatement(DEMAND_SELECT_ID );
 			ps.setInt(FIRST, demand.getId());
-			
-			
+
 			rs = ps.executeQuery();
-			System.out.println("σορ δΰξ 3" );
+			
 			while (rs.next()) {
 				int id = rs.getInt(FIRST);
 				int id_contractor = rs.getInt(SECOND);
@@ -257,7 +255,6 @@ public class SQLDemandDAO implements DemandDAO {
 			ps.setString(FIRST, department);
 		
 			rs = ps.executeQuery();
-			System.out.println("1111111" );
 			while (rs.next()) {
 				int idDB = rs.getInt(FIRST);
 				int id_contractor = rs.getInt(SECOND);
@@ -269,7 +266,6 @@ public class SQLDemandDAO implements DemandDAO {
 				String time = rs.getString(EIGTTH);
 				String address = rs.getString(NINETH );
 				demand = new Demand(idDB, id_contractor, id_client, status_demand, departmentDB, describtion, photo,time,address );
-				System.out.println(demand.getDepartment() );
 				List.add(demand);
 			}
 		} catch (ConnectionPoolException e) {
@@ -345,7 +341,7 @@ public class SQLDemandDAO implements DemandDAO {
 
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
 		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
-		System.out.println("σορ δΰξ" );
+
 		try {
 			con = cp.takeConnection();
 
@@ -356,10 +352,8 @@ public class SQLDemandDAO implements DemandDAO {
 			ps.executeUpdate();
 			ps = con.prepareStatement(DEMAND_SELECT_ID );
 			ps.setInt(FIRST, id);
-			
-			
+	
 			rs = ps.executeQuery();
-			System.out.println("id="+id );
 			while (rs.next()) {
 				int idDB = rs.getInt(FIRST);
 				int id_contractorDB = rs.getInt(SECOND);
@@ -371,7 +365,7 @@ public class SQLDemandDAO implements DemandDAO {
 				String time = rs.getString(EIGTTH);
 				String address = rs.getString(NINETH );
 				System.out.println("σορ δΰξ4" );
-				demandNew = new Demand(idDB, id_contractor, id_client, status_demand, department, describtion, photo,time,address );
+				demandNew = new Demand(idDB, id_contractorDB, id_client, status_demand, department, describtion, photo,time,address );
 				System.out.println(demandNew.getStatus_demand() );
 			}
 			
@@ -391,8 +385,5 @@ public class SQLDemandDAO implements DemandDAO {
 
 		return demandNew;
 	}
-
-	
-
 
 }

@@ -16,10 +16,10 @@
 					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
 	<div id="fon">
-		<br />
+		<br /><br /><br /><br />
 	<div id="centerAvtorization1">
 	<div id="centerAvtorization2">
-	
+	<br />
 		<strong>Авторизация клиента</strong>	<br /><br />
 			
 			<form action="Controller" method="post">
@@ -32,7 +32,7 @@
 			</form>
 			</div>	
 		</div>
-	<br />	<br />	<br />
+	<br />	<br />	<br /><br /><br /><br /><br />
 </div>
 
 </body>

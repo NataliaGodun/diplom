@@ -10,14 +10,8 @@ public interface DemandDAO {
 	
 	ArrayList<Demand> showDemand(int id) throws DAOException;
 	ArrayList<Demand> showDemand(String department) throws DAOException;
-
-	
 	Demand addDemand(Demand demand) throws DAOException;
-
-
 	void deleteDemand(int id) throws DAOException;
-
-
 	Demand editDemand(Demand demand)throws DAOException;
 	Demand viewDemand(int id) throws DAOException;
 	Demand editDemand(int id, int id_contractor, String status)throws DAOException;

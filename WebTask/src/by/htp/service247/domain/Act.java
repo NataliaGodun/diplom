@@ -6,18 +6,20 @@ public class Act {
 	private String comment;
 	private int id_contractor;
 	private String describtion;
+	private int id_demand;
 	
 	public Act() {
 
 	}
 
-	public Act(int id_act, String time, String comment,int id_contractor,String describtion) {
+	public Act(int id_act, String time, String comment,int id_contractor,String describtion,int id_demand) {
 		super();
 		this.id_act = id_act;
 		this.time = time;
 		this.comment= comment;
 		this.id_contractor= id_contractor;
 		this.describtion = describtion;
+		this.id_demand = id_demand;
 	}
 
 	public int getId_act() {
@@ -60,6 +62,14 @@ public class Act {
 		this.describtion = describtion;
 	}
 
+	public int getId_demand() {
+		return id_demand;
+	}
+
+	public void setId_demand(int id_demand) {
+		this.id_demand = id_demand;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -68,6 +78,7 @@ public class Act {
 		result = prime * result + ((describtion == null) ? 0 : describtion.hashCode());
 		result = prime * result + id_act;
 		result = prime * result + id_contractor;
+		result = prime * result + id_demand;
 		result = prime * result + ((time == null) ? 0 : time.hashCode());
 		return result;
 	}
@@ -95,6 +106,8 @@ public class Act {
 			return false;
 		if (id_contractor != other.id_contractor)
 			return false;
+		if (id_demand != other.id_demand)
+			return false;
 		if (time == null) {
 			if (other.time != null)
 				return false;
@@ -102,6 +115,8 @@ public class Act {
 			return false;
 		return true;
 	}
+
+	
 	
 	
 

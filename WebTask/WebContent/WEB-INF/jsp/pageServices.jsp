@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<body>
+	
 
 	<img
 					src="${pageContext.request. contextPath}/resources/images/image4.png"
@@ -51,7 +51,7 @@
 			<br /><br />
 			<div id="unit5">
 			Мы занимаемся техническим обслуживанием зданий и обеспечиваем бесперебойную работу всех инженерных систем
-			: сантехнических (отопление, водоснабжение, канализация), систем электроснаюжения, вентиляции и кондиционирования.
+			: сантехнических (отопление, водоснабжение, канализация), систем электроснабжения, вентиляции и кондиционирования.
 			Выберите, что вас интересует:</div>
 			
 		
@@ -59,12 +59,14 @@
 		<div id="unit1">
 
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="SHOWLOGINFORMCLIENT" /> 		
+							<input type="hidden" name="department" value="Вентиляция и кондиционирование" /> 
+								<input type="hidden" name="command" value="SHOWELECTRO" /> 		
 								<input	type="submit" value="Услуги по вентиляции"  />
 							</form></div>
 							<div id="unit2">
 						<form action="Controller" method="get">
-								<input type="hidden" name="command" value="SHOWLOGINFORMCONTRACTOR" /> 
+								<input type="hidden" name="department" value="Электроснабжение" /> 
+								<input type="hidden" name="command" value="SHOWELECTRO" /> 
 								
 								<input	type="submit" value="Услуги по электрике"  />
 							</form>
@@ -73,13 +75,14 @@
 				
 							<div id="unit3">
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="SHOWCOMMERCIALPAGE" /> 							
+							<input type="hidden" name="department" value="Водоснабжение и канализация" />
+								<input type="hidden" name="command" value="SHOWELECTRO" /> 							
 								<input	type="submit" value="Услуги по сантехнике"  />
 							</form>
 				
 </div></div>
 		
-</div>
+</div></div>
 		
 </body>
 </html>

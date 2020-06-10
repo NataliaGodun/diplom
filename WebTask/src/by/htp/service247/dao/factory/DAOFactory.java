@@ -1,12 +1,16 @@
 package by.htp.service247.dao.factory;
 
+import by.htp.service247.dao.ActDAO;
 import by.htp.service247.dao.ClientDAO;
 import by.htp.service247.dao.ContractorDAO;
 import by.htp.service247.dao.DemandDAO;
+import by.htp.service247.dao.DepartmentDAO;
 import by.htp.service247.dao.PropositionDAO;
+import by.htp.service247.dao.impl.SQLActDAO;
 import by.htp.service247.dao.impl.SQLClientDAO;
 import by.htp.service247.dao.impl.SQLContractorDAO;
 import by.htp.service247.dao.impl.SQLDemandDAO;
+import by.htp.service247.dao.impl.SQLDepartmentDAO;
 import by.htp.service247.dao.impl.SQLPropositionDAO;
 
 /**
@@ -22,7 +26,8 @@ public final class DAOFactory {
 	private final ClientDAO sqlClientImpl = new SQLClientDAO();
 	private final ContractorDAO sqlContractorImpl = new SQLContractorDAO();
 	private final PropositionDAO sqlPropositionImpl = new SQLPropositionDAO();
-
+	private final ActDAO sqlActImpl = new SQLActDAO();
+	private final DepartmentDAO sqlDepartmentImpl = new SQLDepartmentDAO();
 
 	private DAOFactory() {
 	}
@@ -43,10 +48,13 @@ public final class DAOFactory {
 	}
 
 	public PropositionDAO getPropositionDAO() {
-		
 		return sqlPropositionImpl;
 	}
-
-	
+	public ActDAO getActDAO() {
+		return sqlActImpl;
+	}
+	public DepartmentDAO getDepartmentDAO() {
+		return sqlDepartmentImpl;
+	}
 
 }

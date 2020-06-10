@@ -41,7 +41,8 @@
 				<strong>Дата и время:</strong>
 				<c:out value=" ${demand.time}" /><br />
 				<strong>Статус заявки: </strong>
-				<c:out value="${demand.status_demand }" /><br />
+				<c:out value="${demand.status_demand }" /><br /><br />
+				<div id="centerViewDemand2"> 
 				<strong>Измените статус: </strong>	
 			<form action="Controller" method="get">
 				<input type="hidden" name="command" value="EDITSTATUS" /> 
@@ -56,14 +57,14 @@
     <option value="Выполнено">Выполнено</option>
     <option value="Отложено">Отложено</option>
    </select></p>
-				<br />
+				<br /><br /><br /><br />
 				
 				<input type="submit" value="    Сохранить статус     " />
-			</form>
+			</form></div>
 		
 			<br />
 	</div>
-		</div>
+		
 
 		
 

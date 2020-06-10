@@ -1,8 +1,7 @@
 package by.htp.service247.domain;
 
 public class Demand {
-	//private static final long serialVersionVID=-6544827707949518716L;
-	
+		
 	private int id;
 	private int id_contractor;
 	private int id_client;

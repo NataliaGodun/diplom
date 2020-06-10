@@ -1,7 +1,5 @@
 package by.htp.service247.dao;
 
-import java.util.ArrayList;
-
 import by.htp.service247.dao.exception.DAOException;
 import by.htp.service247.domain.Act;
 

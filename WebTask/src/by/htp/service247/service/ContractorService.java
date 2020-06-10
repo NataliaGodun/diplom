@@ -15,7 +15,5 @@ public interface ContractorService {
 	
 	
 	public Contractor registration(Contractor contractor) throws ServiceException;
-	
-	public ArrayList<Contractor> showContractor() throws ServiceException;
-	void deleteContractor(int id) throws ServiceException;
+
 }
