@@ -30,7 +30,11 @@
 				<br /> <input type="password" name="password" value="" /><br /> <br />
 				<input type="submit" value="Войти" />
 			</form>
-	
+	<c:if test="${not empty  requestScope.errorMessage }">
+			<br />
+			<font color="red">Неправильный логин или пароль!</font>
+			<br />
+		</c:if>
 			</div>	
 		</div>
 	<br />	<br />	<br />

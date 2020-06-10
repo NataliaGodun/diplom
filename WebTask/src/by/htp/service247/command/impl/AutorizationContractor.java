@@ -27,6 +27,9 @@ public class AutorizationContractor implements Command {
 	private static final String URL_VIEW_ALL_DEMAND_DEPARTMENT = " http://localhost:8080/WebTask/Controller?command=ShowAllDemandsDepartment";
 	private static final String DEPARTMENT = "department";
 	private static final String ID_CONTRACTOR = "id_contractor";
+	private static final String MESSAGE_WRONG_INFO = "wrong login or password";
+	private static final String ERROR_MESSAGE= "errorMessage";
+	private static final String LOGIN_FORM_CONTRACTOR_JSP = "WEB-INF/jsp/loginFormContractor.jsp";
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -69,8 +72,9 @@ public class AutorizationContractor implements Command {
 					}
 
 				} else {
-					System.out.println("7");
-				//	response.sendRedirect(URL_VIEW_ALL_BOOK_WITH_INFO);
+					request.setAttribute( ERROR_MESSAGE, MESSAGE_WRONG_INFO);
+					RequestDispatcher dispatcher = request.getRequestDispatcher(LOGIN_FORM_CONTRACTOR_JSP);
+					dispatcher.forward(request, response);
 				}
 			} catch (ServiceException e) {
 

@@ -21,12 +21,12 @@ public class AutorizationClient implements Command {
 	private static final String PASSWORD = "password";
 	private static final String CLIENT= "client";
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
-	
+	private static final String MESSAGE_WRONG_INFO = "wrong login or password";
+	private static final String ERROR_MESSAGE= "errorMessage";
+	private static final String LOGIN_FORM_CLIENT_JSP = "WEB-INF/jsp/loginFormClient.jsp";
 	private static final String NAME_CLIENT = "firstName";
 	
 	
-	private static com.devcolibri.ssl.Sender sslSender = new com.devcolibri.ssl.Sender("nat_ush_ka@mail.ru", "ER567ghm");
-
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   
@@ -55,8 +55,10 @@ public class AutorizationClient implements Command {
 				dispatcher.forward(request, response);
 
 			} else {
-				
-			//	response.sendRedirect(URL_VIEW_ALL_BOOK_WITH_INFO);
+				request.setAttribute( ERROR_MESSAGE, MESSAGE_WRONG_INFO);
+				RequestDispatcher dispatcher = request.getRequestDispatcher(LOGIN_FORM_CLIENT_JSP);
+				dispatcher.forward(request, response);
+			
 			}
 		} catch (ServiceException e) {
 			
