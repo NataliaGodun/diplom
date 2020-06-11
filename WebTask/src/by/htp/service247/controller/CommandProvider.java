@@ -15,6 +15,7 @@ import by.htp.service247.command.impl.EditDemandForm;
 import by.htp.service247.command.impl.EditStatus;
 import by.htp.service247.command.impl.Exit;
 import by.htp.service247.command.impl.GetImage;
+import by.htp.service247.command.impl.Profil;
 import by.htp.service247.command.impl.RegContractor;
 import by.htp.service247.command.impl.SelectDepartmentForm;
 import by.htp.service247.command.impl.ShowAddDemandForm;
@@ -64,6 +65,7 @@ public class CommandProvider {
 		commands.put(CommandName.REGCONTRACTOR, new RegContractor());
 		commands.put(CommandName.CREATEACT, new CreateAct());
 		commands.put(CommandName.SHOWELECTRO, new ShowElectro());
+		commands.put(CommandName.PROFIL, new Profil());
 		commands.put(CommandName.EXIT, new Exit());
 	
 	

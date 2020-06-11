@@ -30,9 +30,9 @@
 				enctype="multipart/form-data">
 					<input type="hidden" name="department" value="${requestScope.department }" /> 
 					<p>Описание:<br /> 
-  					 <textarea name="describtion" cols="40" rows="5"></textarea></p>			
+  					 <textarea name="describtion" cols="40" rows="5" required></textarea></p>			
 					 Адрес:<br /> 
-					  <textarea name="address" cols="40" rows="2"></textarea><br /> <br /> 
+					  <textarea name="address" cols="40" rows="2" required></textarea><br /> <br /> 
 					 Прикрепить фотографию:<br />  
 					 <input type="file" name="file" id="file" /> <br /><br />
 			     <input

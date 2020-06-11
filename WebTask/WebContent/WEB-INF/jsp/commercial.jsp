@@ -20,13 +20,14 @@
 		Рассчитайте стоимость опрессовки систем отопления для своего объекта в онлайн-режиме.
 		Заполните обязательные поля и через минуту получите коммерческое предложение на e-mail.<br /></div>
 		<div id="center2">
+	
 		<div id="center3">
 	<form action="Controller" method="get">
 				<input type="hidden" name="command" value="TAKEKP" /> 
-				Имя:     <input type="text" name="name_user" value="" /><br />				
-				Email:   <input type="text" name="email" value="" /><br />	
-				Адрес:   <input type="text" name="address" value="" /><br />			
-				Телефон: <input type="text" name="phone" value="" /><br />				
+				Имя:     <input type="text" name="name_user" value="" required/><br />				
+				Email:   <input type="text" name="email" value="" required/><br />	
+				Адрес:   <input type="text" name="address" value="" required/><br />			
+				Телефон: <input type="text" name="phone" value="" required/><br />				
 				Выберите город:<br>
 <input id="rb1" type="radio" name="city" value="Минск" onChange="hide()" checked >Минск
 <input id="rb2" type="radio" name="city" value="Другой населенный пункт" onChange="show()">Другой населенный пункт
@@ -34,7 +35,11 @@
     <div id="infoKm" style="display:none">
        Введите расстояние от Минска в (км.): <input type="text" name="km" value="" /><br />	</div>
 <br>
-		
+		<c:if test="${not empty  requestScope.mess}">
+			<br />
+			Введите данные для расчета!
+			<br />
+		</c:if>
 	<strong>Выберите, какие данные Вам удобно предоставить?<br /><br></strong>
 <input id="myRadioButton1" type="radio" name="data" value="s" onChange="show1()" >Площадь помещений<br />	
 <input id="myRadioButton2" type="radio" name="data" value="dl" onChange="show2()">Длина и сечение труб<br />	
@@ -51,6 +56,7 @@
      	Введите количество ребер радиаторов : <input type="text" name="reber_radiatorov" value="" /><br />	</div>
 					
 				<br>
+				
 				<input type="submit" value="Получить коммерческое предложение!" />
 			</form></div>
 				</div>

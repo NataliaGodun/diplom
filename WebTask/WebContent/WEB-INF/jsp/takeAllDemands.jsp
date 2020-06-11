@@ -24,15 +24,25 @@
 				<input type="hidden" name="command" value="exit" /> <br /> <input
 					type="submit" value="Выход" />
 					
+			</form>
+			<form action="Controller" method="get">
+				<input type="hidden" name="command" value="PROFIL" /> <br /> <input
+					type="submit" value="Личный кабинет" />
+					
 			</form></div></div>
 	
 <div id="centerLKklient">
-		
+			<c:if test="${not empty  requestScope.message  }">
+			<br />
+			Ваша заявка успешно изменена!
+			<br />
+		</c:if>
 		<c:if test="${not empty  requestScope.messageInfo }">
 			<br />
 			Ваша заявка успешно удалена!
 			<br />
 		</c:if>
+		
 			<br /><strong>Перечень заявок:</strong><br /><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">

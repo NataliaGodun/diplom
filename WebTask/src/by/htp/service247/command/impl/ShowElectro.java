@@ -19,7 +19,7 @@ public class ShowElectro implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String departmentS = "Ёлектроснабжение";
+		
 		String departmentS = request.getParameter(DEPARTMENT);
 		String department_descr="";
 		String services="";

@@ -21,8 +21,9 @@ import by.htp.service247.service.factory.ServiceFactory;
 public class EditStatus implements Command {
 	private static final String ID_DEMAND =  "id";
 	private static final String STATUS =  "status_demand";
-	private static final String ALL_DEMANDS_DEPARTMENT_JSP = "WEB-INF/jsp/allDemandsDepartment.jsp";
 	private static final String ID_CONTRACTOR = "id_contractor";
+	private static final String URL_VIEW_ALL_DEMAND_DEPARTMENT = " http://localhost:8080/WebTask/Controller?command=ShowAllDemandsDepartment";
+	
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,9 +47,10 @@ public class EditStatus implements Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher(ALL_DEMANDS_DEPARTMENT_JSP);
-		dispatcher.forward(request, response);
+		String url = URL_VIEW_ALL_DEMAND_DEPARTMENT;
+		
+		response.sendRedirect(url);	
+	
 	}
 
 }

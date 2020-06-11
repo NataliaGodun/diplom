@@ -25,6 +25,12 @@
 			<div id="centerLKklient">
 			 <strong>
 				Добро пожаловать,  <c:out value="${sessionScope.firstName}" />! </strong>
+				
+				<c:if test="${not empty  requestScope.message  }">
+			<br />
+			Новый сотрудник успешно добавлен!
+			<br />
+		</c:if>
 		<form action="Controller" method="get">
 				<input type="hidden" name="command" value="SHOWALLDEMANDSDEPARTMENT" /> <br />
 				<input type="submit" value="   Зарегистрировать клиента   "  />

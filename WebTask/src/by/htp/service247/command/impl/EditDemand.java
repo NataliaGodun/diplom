@@ -3,13 +3,10 @@ package by.htp.service247.command.impl;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import by.htp.service247.command.Command;
 import by.htp.service247.domain.Demand;
 import by.htp.service247.service.DemandService;
@@ -18,7 +15,6 @@ import by.htp.service247.service.factory.ServiceFactory;
 
 public class EditDemand implements Command {
 
-	private static final String EDIT_FORM_DEMAND_JSP =  "WEB-INF/jsp/editDemand.jsp";
 	private static final String ID_DEMAND =  "id";
 	private static final String DESCRIBTION =  "describtion";
 	private static final String DEPARTMENT =  "department";
@@ -26,6 +22,8 @@ public class EditDemand implements Command {
 	private static final String MAIN_CLIENT_JSP = "WEB-INF/jsp/mainClient.jsp";
 	private static final String ID_CLIENTA = "id_client";
 	private static final String PHOTO = "photo";
+	private static final String MESSAGE_SUCCESSFUL_EDIT ="&message=demand successful edit!";
+	private static final String URL_VIEW_ALL_DEMAND = "http://localhost:8080/WebTask/Controller?command=SHOWALLDEMANS";
 	
 
 	@Override
@@ -61,13 +59,19 @@ public class EditDemand implements Command {
 		
 		try {
 			demand  = demandService.editDemand(demand);
+			
+			String url = URL_VIEW_ALL_DEMAND;
+			String url2 = url + MESSAGE_SUCCESSFUL_EDIT;
+			response.sendRedirect(url2);	
+			
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
+			RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CLIENT_JSP);
+			dispatcher.forward(request, response);
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CLIENT_JSP);
-		dispatcher.forward(request, response);
+	
 	}
 
 }

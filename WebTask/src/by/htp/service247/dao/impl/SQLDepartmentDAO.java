@@ -28,7 +28,7 @@ public class SQLDepartmentDAO implements DepartmentDAO {
 		try {
 			con = cp.takeConnection();
 			PreparedStatement ps = con.prepareStatement(VIEW_DEPARTMENT );
-			System.out.println("1"+department.getDepartment());
+			
 			ps.setString(FIRST, department.getDepartment());
 	
 			rs = ps.executeQuery();
@@ -38,9 +38,7 @@ public class SQLDepartmentDAO implements DepartmentDAO {
 				String services = rs.getString(THIRD);
 				
 				department2 = new Department(departmentDB, department_descr, services );
-			System.out.println("2"+department2.getDepartment());
-			System.out.println("3"+department2.getDepartment_descr());
-			System.out.println("4"+department2.getServices());
+			
 				}
 
 		} catch (ConnectionPoolException e) {

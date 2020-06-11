@@ -28,13 +28,13 @@
 
 		<form action="Controller" method="get">
 				<input type="hidden" name="command" value="REGCONTRACTOR" /> <br />
-				Имя: <br />    <input type="text" name="firstName" value="" /><br />				
-				Фамилия: <br />  <input type="text" name="lastName" value="" /><br />	
-				Телефон: <br />  <input type="text" name="phone" value="" /><br />	
-				Дата рождения: <br />  <input type="text" name="dateOfBirth" value="" /><br />			
-				Паспорт: <br /><input type="text" name="passport" value="" /><br />	
-				Логин:  <br />   <input type="text" name="login" value="" /><br />				
-				Пароль: <br />  <input type="password" name="password" value="" /><br />	
+				Имя: <br />    <input type="text" name="firstName" value="" required /><br />				
+				Фамилия: <br />  <input type="text" name="lastName" value="" required /><br />	
+				Телефон: <br />  <input type="text" name="phone" value="" required/><br />	
+				Дата рождения: <br />  <input type="text" name="dateOfBirth" value="" required/><br />			
+				Паспорт: <br /><input type="text" name="passport" value="" required/><br />	
+				Логин:  <br />   <input type="text" name="login" value="" required/><br />				
+				Пароль: <br />  <input type="password" name="password" value="" required/><br />	
 				Отдел: <br /><select  name="department">
     <option value="Вентиляция и кондиционирование">Вентиляция и кондиционирование</option>
     <option value="Водоснабжение и канализация">Водоснабжение и канализация</option>

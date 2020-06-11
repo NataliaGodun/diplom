@@ -30,7 +30,10 @@ public class TakeKP implements Command {
 	private static final String TRUB25= "trub25";
 	private static final String RR= "reber_radiatorov";	
 	private static com.devcolibri.ssl.Sender sslSender = new com.devcolibri.ssl.Sender("s-247@mail.ru", "ER567ghm");
-
+	private static final String URL_COMMERCIAL = "http://localhost:8080/WebTask/Controller?command=SHOWCOMMERCIALPAGE";
+	private static final String MESSAGE ="&messageInfo=data required!";
+	private static final String MESSAGE_SUCCESSFUL_DELETE ="&mess=demand successful delete!";
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int km;
@@ -67,6 +70,13 @@ public class TakeKP implements Command {
 		if (rrS=="") { rr=0;}else {
 			rr=Integer.parseInt(rrS);
 			 }
+		
+		if (data==null) {
+			String url = URL_COMMERCIAL;
+			String url2 = url + MESSAGE_SUCCESSFUL_DELETE;
+			response.sendRedirect(url2);
+			
+		}else {
 		ServiceFactory factory = ServiceFactory.getInstance();
 		PropositionService propositionService = factory.getPropositionService();
 		Proposition proposition= new Proposition(0,email,address,phone,name_user,city,km,data,area,trub10,trub25,rr,department,price);
@@ -85,5 +95,5 @@ public class TakeKP implements Command {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(PAGE_SERVICES_JSP);
 		dispatcher.forward(request, response);
 	}
-
+	}
 }

@@ -29,12 +29,15 @@ public class RegContractor implements Command {
 		private static final String ROLE= "simple";
 		private static final String DEPARTMENT= "department";
 		private static final String MAIN_CONTRACTOR_JSP = "WEB-INF/jsp/mainContractor.jsp";
+		private static final String MESSAGE_ADD_CONTRACTOR = "add contractor";
+		private static final String MESSAGE = "message";
+		
 		
 		private static final Logger LOGGER = LogManager.getRootLogger();
 
 		@Override
 		public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			 System.out.println("Reg impl1");
+			
 			int id=0;
 			String firstName = request.getParameter(FIRST_NAME);
 			String lastName = request.getParameter(LAST_NAME);
@@ -47,7 +50,7 @@ public class RegContractor implements Command {
 			String role = ROLE;
 			String department = request.getParameter(DEPARTMENT);
 			Contractor contractor=new Contractor(id,firstName, lastName, phone, dateOfBirth,passport,login,password,status,role,department);
-			 System.out.println("Reg impl2");
+			
 
 			ServiceFactory factory = ServiceFactory.getInstance();
 			ContractorService contractorService = factory.getContractorService();
@@ -57,7 +60,8 @@ public class RegContractor implements Command {
 			try {
 				contractor = contractorService.registration(contractor);
 				if (contractor != null) {
-					
+
+					request.setAttribute(MESSAGE, MESSAGE_ADD_CONTRACTOR);
 					RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_CONTRACTOR_JSP);
 					dispatcher.forward(request, response);
 
