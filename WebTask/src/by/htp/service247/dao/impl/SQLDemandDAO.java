@@ -188,7 +188,7 @@ public class SQLDemandDAO implements DemandDAO {
 
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
 		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
-		System.out.println("σορ δΰξ" );
+		
 		try {
 			con = cp.takeConnection();
 
@@ -216,7 +216,7 @@ public class SQLDemandDAO implements DemandDAO {
 				String photo = rs.getString(SEVENTH);
 				String time = rs.getString(EIGTTH);
 				String address = rs.getString(NINETH );
-				System.out.println("σορ δΰξ4" );
+				
 				demandNew = new Demand(id, id_contractor, id_client, status_demand, department, describtion, photo,time,address );
 			}
 			

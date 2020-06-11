@@ -33,7 +33,7 @@ public class AutorizationClient implements Command {
 		Client client = null;
 		String login = request.getParameter(LOGIN);
 		String password = request.getParameter(PASSWORD);
-        System.out.println(login+password);
+        
 		ServiceFactory factory = ServiceFactory.getInstance();
 		ClientService clientService = factory.getClientService();
 		

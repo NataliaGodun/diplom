@@ -46,9 +46,9 @@
 				<input type="hidden" name="department" value="${demand.department}" /> 						
 				<input type="hidden" name="address" value="${demand.address}" />
 				<strong>Внесите изменения в заявку: </strong><br />			
-  					 <textarea name="describtion" cols="40" rows="5"></textarea><br />	
+  					 <textarea name="describtion" cols="40" rows="5" required placeholder="${demand.describtion}"></textarea><br />	
   				<br />
-				<input type="submit" value="Изменить заявку" />
+  				  	<input type="submit" value="Изменить заявку" />
 			</form>
 	
 				
