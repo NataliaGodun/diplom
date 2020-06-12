@@ -14,6 +14,10 @@
 	<img
 					src="${pageContext.request. contextPath}/resources/images/image4.png"
 					width="100%" />
+					<c:if test="${not empty  requestScope.Message }">
+						<c:out value="${  requestScope.Message }" />
+						<br />
+					</c:if>
 	<div id="fon">
 		<br />
 		<div id="center"><div id="center4">
@@ -35,11 +39,7 @@
     <div id="infoKm" style="display:none">
        Введите расстояние от Минска в (км.): <input type="text" name="km" value="" /><br />	</div>
 <br>
-		<c:if test="${not empty  requestScope.mess}">
-			<br />
-			Введите данные для расчета!
-			<br />
-		</c:if>
+		
 	<strong>Выберите, какие данные Вам удобно предоставить?<br /><br></strong>
 <input id="myRadioButton1" type="radio" name="data" value="s" onChange="show1()" >Площадь помещений<br />	
 <input id="myRadioButton2" type="radio" name="data" value="dl" onChange="show2()">Длина и сечение труб<br />	

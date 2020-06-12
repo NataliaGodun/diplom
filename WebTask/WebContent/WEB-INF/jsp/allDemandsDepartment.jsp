@@ -26,7 +26,11 @@
 					
 			</form></div></div>
 			<div id="centerLKklient">
-  				 
+  				 <c:if test="${not empty  requestScope.messageInfo }">
+			<br />
+			Акт выполненных работ сохранен в базу данных!
+			<br /><br />
+		</c:if>
 		<strong>Перечень заявок по отделу <br />"<c:out value="${requestScope.department}" />" :</strong><br />
 <c:forEach items="${requestScope.List}" var="List">
 	<div id="image">
@@ -47,7 +51,7 @@
 								<input	type="submit" value="Изменить статус заявки"  />
 							</form>			<br />
 							<form action="Controller" method="get">
-								<input type="hidden" name="command" value="CREATEACT" /> 
+								<input type="hidden" name="command" value="CREATEACTFORM" /> 
 								<input type="hidden" name="id" value="${List.id }" /> 
 								<input	type="submit" value="         Создать акт           "  />
 							</form>

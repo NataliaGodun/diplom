@@ -27,12 +27,17 @@
 				Добро пожаловать,  <c:out value="${sessionScope.firstName}" />! </strong>
 				
 				<c:if test="${not empty  requestScope.message  }">
-			<br />
+			<br /><br />
 			Новый сотрудник успешно добавлен!
-			<br />
+			<br /><br />
+		</c:if>
+		<c:if test="${not empty  requestScope.messageInfo  }">
+			<br /><br />
+			Новый клиент успешно добавлен!
+			<br /><br />
 		</c:if>
 		<form action="Controller" method="get">
-				<input type="hidden" name="command" value="SHOWALLDEMANDSDEPARTMENT" /> <br />
+				<input type="hidden" name="command" value="SHOWREGFORMCLIENT" /> <br />
 				<input type="submit" value="   Зарегистрировать клиента   "  />
 			</form>
 

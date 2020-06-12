@@ -31,8 +31,8 @@ public class TakeKP implements Command {
 	private static final String RR= "reber_radiatorov";	
 	private static com.devcolibri.ssl.Sender sslSender = new com.devcolibri.ssl.Sender("s-247@mail.ru", "ER567ghm");
 	private static final String URL_COMMERCIAL = "http://localhost:8080/WebTask/Controller?command=SHOWCOMMERCIALPAGE";
-	private static final String MESSAGE ="&messageInfo=data required!";
-	private static final String MESSAGE_SUCCESSFUL_DELETE ="&mess=demand successful delete!";
+	private static final String MESSAGE ="&Message=data required!";
+	
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -73,7 +73,7 @@ public class TakeKP implements Command {
 		
 		if (data==null) {
 			String url = URL_COMMERCIAL;
-			String url2 = url + MESSAGE_SUCCESSFUL_DELETE;
+			String url2 = url + MESSAGE ;
 			response.sendRedirect(url2);
 			
 		}else {

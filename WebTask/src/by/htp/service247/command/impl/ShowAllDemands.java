@@ -46,7 +46,7 @@ public class ShowAllDemands implements Command {
 					request.setAttribute(MESSAGE_INFO, MESSAGE_NO_BOOKS);
 
 				} else {
-					String messageInfo = request.getParameter(MESSAGE_INFO);// Book
+					String messageInfo = request.getParameter(MESSAGE_INFO);// Demand
 																			// successful
 																			// delete
 																			// or no

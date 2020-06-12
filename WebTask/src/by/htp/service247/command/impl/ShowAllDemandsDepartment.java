@@ -20,6 +20,7 @@ public class ShowAllDemandsDepartment implements Command {
 	private static final String DEPARTMENT = "department";
 	private static final String LIST = "List";
 	private static final String ALL_DEMANDS_DEPARTMENT_JSP = "WEB-INF/jsp/allDemandsDepartment.jsp";
+	private static final String MESSAGE_INFO = "messageInfo";
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,6 +52,10 @@ public class ShowAllDemandsDepartment implements Command {
 			//request.setAttribute(ERROR_MESSAGE, MESSAGE_ABOUT_PROBLEM);
 
 		}
+		String act=request.getParameter("messageInfo");
+		if (act==null) {}else {
+			request.setAttribute(MESSAGE_INFO, "act add !!!!");
+			}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(ALL_DEMANDS_DEPARTMENT_JSP);
 
