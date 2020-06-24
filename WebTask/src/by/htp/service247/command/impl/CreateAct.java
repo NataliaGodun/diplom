@@ -21,24 +21,25 @@ import by.htp.service247.service.factory.ServiceFactory;
 
 public class CreateAct implements Command {
 	
-	private static final String DEMAND_ID =  "id";
-	private static final String CHANGE_STATUS_JSP = "WEB-INF/jsp/pageServices.jsp";
+	private static final String DEMAND_ID =  "demand_id";
+	private static final String COMMENT =  "comment";
 	private static final String URL_VIEW_ALL_DEMAND_DEPARTMENT = " http://localhost:8080/WebTask/Controller?command=ShowAllDemandsDepartment";
-	private static final String DEPARTMENT = "department";
-	private static final String LIST = "List";
-	private static final String ALL_DEMANDS_DEPARTMENT_JSP = "WEB-INF/jsp/allDemandsDepartment.jsp";
-	private static final String MESSAGE_INFO = "messageInfo";
+	private static final String DESCRIBTION= "describtion";
+	private static final String ID_CONTRACTOR = "id_contractor";
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	/*	
+		
 		 int id_act=0;
 		 Date dateNow = new Date();	  
 		 SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy 'â' hh:mm:ss");
 		 final String time = formatForDateNow.format(dateNow);
-		 String comment="";
-		 int id_contractor=0;
-		 String describtion="";
+		 String comment=request.getParameter(COMMENT);
+		
+		 HttpSession session = request.getSession(true);
+			
+		int id_contractor=(int) session.getAttribute(ID_CONTRACTOR);
+		 String describtion=request.getParameter(DESCRIBTION);
 		
 		 String idS = request.getParameter(DEMAND_ID);
 		int demand_id = Integer. parseInt(idS);
@@ -55,7 +56,7 @@ public class CreateAct implements Command {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-*/
+			 System.out.println("ok");
 	response.sendRedirect(URL_VIEW_ALL_DEMAND_DEPARTMENT+"&messageInfo=act add!");
 
 		

@@ -1,6 +1,6 @@
 package by.htp.service247.service.impl;
 
-import by.htp.service247.dao.DemandDAO;
+
 import by.htp.service247.dao.PropositionDAO;
 import by.htp.service247.dao.exception.DAOException;
 import by.htp.service247.dao.factory.DAOFactory;

@@ -18,7 +18,7 @@ import by.htp.service247.service.factory.ServiceFactory;
 
 public class RegContractor implements Command {
 
-	private static final String LOGIN = "login";
+		private static final String LOGIN = "login";
 		private static final String PASSWORD = "password";
 		private static final String FIRST_NAME= "firstName";
 		private static final String LAST_NAME= "lastName";
@@ -31,8 +31,7 @@ public class RegContractor implements Command {
 		private static final String MAIN_CONTRACTOR_JSP = "WEB-INF/jsp/mainContractor.jsp";
 		private static final String MESSAGE_ADD_CONTRACTOR = "add contractor";
 		private static final String MESSAGE = "message";
-		
-		
+			
 		private static final Logger LOGGER = LogManager.getRootLogger();
 
 		@Override

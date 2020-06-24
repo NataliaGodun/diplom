@@ -28,10 +28,12 @@
 
 	Акт выполненных работ к заявке № <c:out value="${requestScope.demand_id}" /><br />
 		<form action="Controller" method="get">
-				<input type="hidden" name="command" value="CREATEACT" /> <br />
-							
-				Наименование выполненных работ: <br /><input type="text" name="describtion" value="" required/><br />	
-				Примечание:  <br />   <input type="text" name="comment" value="" required/><br />				
+				<input type="hidden" name="demand_id" value="${requestScope.demand_id}" /> <br />
+				<input type="hidden" name="command" value="CREATEACT" /> <br />			
+				Наименование выполненных работ: <br />
+				 <textarea name="describtion" cols="40" rows="5" required></textarea></p>		
+				Примечание:  <br />   
+				 <textarea name="comment" cols="40" rows="4" required></textarea></p>					
 					
 				
 			<br />	

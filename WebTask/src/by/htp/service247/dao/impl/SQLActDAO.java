@@ -17,7 +17,7 @@ public class SQLActDAO implements ActDAO {
 	  private static final String SELECT_ALL_DEMAND_CLIENT = "SELECT * FROM DEMAND WHERE ID_CLIENT=?";
 		private static final String SELECT_ALL_DEMAND_DEPARTMENT = "SELECT * FROM DEMAND WHERE DEPARTMENT=?";
 		private static final String TAKE_DEMAND_FROM_ID = "SELECT * FROM DEMAND WHERE ID=?";
-		private static final String ADD_DEMAND = "INSERT INTO DEMAND (id_contractor, id_client, status_demand, department, describtion,photo, time, address ) VALUES(?,?,?,?,?,?,?,?)";
+		private static final String ADD_ACT = "INSERT INTO ACT (time, comment, id_contractor, describtion, id_demand ) VALUES(?,?,?,?,?)";
 		private static final String DEMAND_SELECT = "SELECT * FROM DEMAND WHERE describtion=? AND time=? ";
 		private static final String DEMAND_SELECT_ID = "SELECT * FROM DEMAND WHERE ID=? ";
 		private static final String EDIT_DEMAND_CLIENT = "UPDATE DEMAND SET  describtion=?, photo=?, time=?,  address=? WHERE ID=?";
@@ -42,17 +42,20 @@ public class SQLActDAO implements ActDAO {
 		Act act2=null;
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
 		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
-		 
+		  System.out.println(act.getTime());
 		try {
 			con = cp.takeConnection();
 
-			PreparedStatement ps = con.prepareStatement(ADD_DEMAND);
+			PreparedStatement ps = con.prepareStatement(ADD_ACT);
 
-			ps.setInt(FIRST, act.getId_act());
-			ps.setString(SECOND, act.getTime());
+			ps.setString(FIRST, act.getTime());
+			ps.setString(SECOND, act.getComment());
+			ps.setInt(THIRD, act.getId_contractor());
+			ps.setString(FOURTH, act.getDescribtion());
+			ps.setInt(FIFTH, act.getId_demand());
+			ps.executeUpdate();
 		
-System.out.println(act.getId_demand());
-		//	ps.executeUpdate();
+
 			
 		
 

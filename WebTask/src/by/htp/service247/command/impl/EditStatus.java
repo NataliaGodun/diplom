@@ -35,7 +35,7 @@ public class EditStatus implements Command {
 		int id = Integer. parseInt(idS);
 		
 		String status = request.getParameter(STATUS);
-		System.out.println("status "+status);
+	
 	
 		ServiceFactory factory = ServiceFactory.getInstance();
 		DemandService demandService = factory.getDemandService();
