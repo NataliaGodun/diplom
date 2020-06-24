@@ -1,4 +1,4 @@
-package com.devcolibri.ssl;
+package by.htp.service247.ssl;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;

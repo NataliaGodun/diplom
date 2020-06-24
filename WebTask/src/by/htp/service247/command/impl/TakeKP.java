@@ -29,7 +29,7 @@ public class TakeKP implements Command {
 	private static final String TRUB10= "trub10";
 	private static final String TRUB25= "trub25";
 	private static final String RR= "reber_radiatorov";	
-	private static com.devcolibri.ssl.Sender sslSender = new com.devcolibri.ssl.Sender("s-247@mail.ru", "ER567ghm");
+	private static by.htp.service247.ssl.Sender sslSender = new by.htp.service247.ssl.Sender("s-247@mail.ru", "ER567ghm");
 	private static final String URL_COMMERCIAL = "http://localhost:8080/WebTask/Controller?command=SHOWCOMMERCIALPAGE";
 	private static final String MESSAGE ="&Message=data required!";
 	
