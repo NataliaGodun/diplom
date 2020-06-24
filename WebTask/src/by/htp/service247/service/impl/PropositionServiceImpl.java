@@ -15,12 +15,12 @@ public class PropositionServiceImpl implements PropositionService {
 		int price=0;
 		int km=proposition.getKm();
 		String data=proposition.getData();
-		System.out.println(data);
+	
 		if (data.equals("s")) {
 			int area=proposition.getArea();
 			double x=0.1;
 			price=(int) (area*x);
-			System.out.println("price="+price);
+			
 		}else if(data.equals("rr")) {
 			int rr=proposition.getReber_radiatorov();
 			double y=0.3;

@@ -364,9 +364,9 @@ public class SQLDemandDAO implements DemandDAO {
 				String photo = rs.getString(SEVENTH);
 				String time = rs.getString(EIGTTH);
 				String address = rs.getString(NINETH );
-				System.out.println("σορ δΰξ4" );
+				
 				demandNew = new Demand(idDB, id_contractorDB, id_client, status_demand, department, describtion, photo,time,address );
-				System.out.println(demandNew.getStatus_demand() );
+				
 			}
 			
 		} catch (ConnectionPoolException e) {

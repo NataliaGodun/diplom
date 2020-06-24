@@ -33,8 +33,7 @@ public class SQLPropositionDAO implements PropositionDAO {
 	@Override
 	public Proposition takeProposition(Proposition proposition) throws DAOException {
 		Connection con = null;
-		ResultSet rs = null;
-		Demand demand2=null;
+	
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
 		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
 		 

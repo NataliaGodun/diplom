@@ -15,7 +15,7 @@ public class CreateActForm implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idS = request.getParameter(ID_DEMAND);
-		System.out.println(idS);
+		
 		//int id = Integer. parseInt(idS);
 		
 		request.setAttribute("demand_id", idS);

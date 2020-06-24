@@ -14,15 +14,8 @@ import by.htp.service247.domain.Act;
 import by.htp.service247.domain.Demand;
 
 public class SQLActDAO implements ActDAO {
-	  private static final String SELECT_ALL_DEMAND_CLIENT = "SELECT * FROM DEMAND WHERE ID_CLIENT=?";
-		private static final String SELECT_ALL_DEMAND_DEPARTMENT = "SELECT * FROM DEMAND WHERE DEPARTMENT=?";
-		private static final String TAKE_DEMAND_FROM_ID = "SELECT * FROM DEMAND WHERE ID=?";
+	 
 		private static final String ADD_ACT = "INSERT INTO ACT (time, comment, id_contractor, describtion, id_demand ) VALUES(?,?,?,?,?)";
-		private static final String DEMAND_SELECT = "SELECT * FROM DEMAND WHERE describtion=? AND time=? ";
-		private static final String DEMAND_SELECT_ID = "SELECT * FROM DEMAND WHERE ID=? ";
-		private static final String EDIT_DEMAND_CLIENT = "UPDATE DEMAND SET  describtion=?, photo=?, time=?,  address=? WHERE ID=?";
-		private static final String EDIT_DEMAND_STATUS = "UPDATE DEMAND SET id_contractor=?, status_demand=? WHERE ID=?";	
-		private static final String DELETE_DEMAND_ID = "DELETE FROM DEMAND WHERE ID=?";	
 		private static final String MESSAGE_ERROR_CONNECTION_POOL = "Error at connection pool.";
 		private static final String MESSAGE_ERROR_SQL = "Error at sql.";
 		private static final String MESSAGE_ERROR_REMOVE_CONNECTION = "Error at remove connection.";
@@ -31,18 +24,15 @@ public class SQLActDAO implements ActDAO {
 		private static final int THIRD = 3;
 		private static final int FOURTH = 4;
 		private static final int FIFTH = 5;
-		private static final int SIXTH = 6;
-		private static final int SEVENTH = 7;
-		private static final int EIGTTH = 8;
-		private static final int NINETH = 9;
+		
+	
 	@Override
 	public Act addAct(Act act) throws DAOException {
 		Connection con = null;
-		ResultSet rs = null;
-		Act act2=null;
+		
 		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
 		ConnectionPool cp = ObjectCPFactory.getConnectionPool();
-		  System.out.println(act.getTime());
+		 
 		try {
 			con = cp.takeConnection();
 
@@ -54,10 +44,6 @@ public class SQLActDAO implements ActDAO {
 			ps.setString(FOURTH, act.getDescribtion());
 			ps.setInt(FIFTH, act.getId_demand());
 			ps.executeUpdate();
-		
-
-			
-		
 
 		} catch (ConnectionPoolException e) {
 			//LOGGER.log(Level.ERROR, MESSAGE_ERROR_CONNECTION_POOL, e);

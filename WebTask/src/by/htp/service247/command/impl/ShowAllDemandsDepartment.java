@@ -28,7 +28,7 @@ public class ShowAllDemandsDepartment implements Command {
 
 		HttpSession session = request.getSession(true);
 		String department= (String) session.getAttribute(DEPARTMENT);
-		System.out.println(department);
+		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		DemandService demandService = factory.getDemandService();
 		

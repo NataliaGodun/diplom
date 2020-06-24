@@ -24,7 +24,7 @@ public class ShowAllDemands implements Command {
 	private static final String ERROR_MESSAGE = "errorMessage";
 	private static final String MESSAGE_INFO = "messageInfo";
 	private static final String MESSAGE = "message";
-	private static final String MESSAGE_ERROR_VIEW_ALL_BOOKS = "Error at ViewAllBooks";
+
 
 	//private static final Logger LOGGER = LogManager.getRootLogger();
 	@Override
@@ -46,12 +46,7 @@ public class ShowAllDemands implements Command {
 					request.setAttribute(MESSAGE_INFO, MESSAGE_NO_BOOKS);
 
 				} else {
-					String messageInfo = request.getParameter(MESSAGE_INFO);// Demand
-																			// successful
-																			// delete
-																			// or no
-																			// such
-																			// book
+					String messageInfo = request.getParameter(MESSAGE_INFO);
 					request.setAttribute(MESSAGE_INFO, messageInfo);
 
 					String messageWrongAuthorization = request.getParameter(MESSAGE);

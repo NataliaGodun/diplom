@@ -41,8 +41,7 @@ public class RegClient implements Command {
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-System.out.println("1");
+
 		int id=0;
 		String email = request.getParameter(EMAIL);
 		String firstName = request.getParameter(FIRST_NAME);
@@ -56,9 +55,7 @@ System.out.println("1");
 		String servElectr = request.getParameter(SERVELECTR);
 		String servVent = request.getParameter(SERVVENT);
 		Client client=new Client(id,email, firstName, lastName, phone,address,status,login,password,servSant,servElectr, servVent);
-		System.out.println("2");
 		
-			
 		ServiceFactory factory = ServiceFactory.getInstance();
 		ClientService clientService = factory.getClientService();
 

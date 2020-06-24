@@ -56,7 +56,7 @@ public class CreateAct implements Command {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			 System.out.println("ok");
+			
 	response.sendRedirect(URL_VIEW_ALL_DEMAND_DEPARTMENT+"&messageInfo=act add!");
 
 		
